@@ -15,6 +15,8 @@
 		<!-- Hessian服务的接口 -->
 		<property name="serviceInterface" value="com.zlebank.zplatform.rmi.ITestCase" />
 	</bean>
+	
+	<!--begin 会员模块 -->
 	<!-- 放入ServiceExporter -->
 	<bean name="/rmiMemberAccountService" class="com.zlebank.zplatform.rmi.ServiceExporter.IMemberAccountServiceExporter" />
 	<!-- <bean id="RmiMemberAccountService" class="com.zlebank.zplatform.rmi.impl.IMemberAccountServiceImpl" /> -->
@@ -25,6 +27,8 @@
 		Hessian服务的接口
 		<property name="serviceInterface" value="com.zlebank.zplatform.rmi.IMemberAccountService" />
 	</bean> -->
+	
+	<!-- end 会员模块 -->
 	<bean
 		class="com.zlebank.zplatform.hessian.api.HessianServerScannerConfigurer">
 		<property name="basePackage" value="com.zlebank.zplatform.rmi"></property>
