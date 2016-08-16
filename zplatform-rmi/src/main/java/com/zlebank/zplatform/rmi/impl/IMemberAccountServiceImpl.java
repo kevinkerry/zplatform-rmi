@@ -26,12 +26,13 @@ import com.zlebank.zplatform.member.service.MemberAccountService;
 import com.zlebank.zplatform.rmi.IMemberAccountService;
 
 /**
+ * 
  * 会员账户相关服务
  *
- * @author Luxiaoshuai
+ * @author houyong
  * @version
- * @date 2016年1月15日 下午2:52:31
- * @since 
+ * @date 2016年8月16日 下午6:16:38
+ * @since
  */
 @Repository
 public class IMemberAccountServiceImpl extends HessianServlet implements IMemberAccountService {

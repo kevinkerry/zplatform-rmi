@@ -24,10 +24,10 @@ import com.zlebank.zplatform.member.exception.GetAccountFailedException;
 /**
  * 会员账户相关服务
  *
- * @author Luxiaoshuai
+ * @author houyong
  * @version
- * @date 2016年1月15日 下午2:51:54
- * @since 
+ * @date 2016年8月16日 下午6:16:38
+ * @since
  */
 @Hessian(context = Context.API_V2, uri = "/remoting/rmiMemberAccountService")
 public interface IMemberAccountService {
