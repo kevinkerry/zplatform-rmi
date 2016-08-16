@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.zlebank.zplatform</groupId>
 	<artifactId>zplatform-remote-deploy</artifactId>
@@ -8,7 +9,7 @@
 	<name>zplatform-remote-deploy</name>
 	<url>http://www.zlebank.com/</url>
 	<description>证联支付平台</description>
-	
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -34,7 +35,19 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 		</dependency>
-		
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-lgpl</artifactId>
+		</dependency>
 	</dependencies>
 
 	<scm>
@@ -133,7 +146,7 @@
 				<artifactId>jackson-mapper-lgpl</artifactId>
 				<version>1.9.11</version>
 			</dependency>
-		
+
 		</dependencies>
 	</dependencyManagement>
 
@@ -313,53 +326,21 @@
 	</modules>
 </project>
 
-<!-- <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>com.zlebank.zplatform</groupId>
-		<artifactId>zplatform-trade-deploy</artifactId>
-		<version>1.2.0-SNAPSHOT</version>
-		<relativePath>../zplatform-trade-deploy/pom.xml</relativePath>
-	</parent>
-	<artifactId>zplatform-rmi</artifactId>
-	<packaging>war</packaging>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>zplatform-rmi Maven Webapp</name>
-	<url>http://maven.apache.org</url>
-	<dependencies>
-		<dependency>
-			<groupId>com.caucho</groupId>
-			<artifactId>hessian</artifactId>
-			<version>4.0.7</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc</artifactId>
-			<version>${springframework.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-web</artifactId>
-			<version>${springframework.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-test</artifactId>
-			<version>${springframework.version}</version>
-		</dependency>
-
-
-		<dependency>
-			<groupId>com.zlebank.zplatform</groupId>
-			<artifactId>zplatform-trade-cmbc</artifactId>
-			<version>1.2.0-SNAPSHOT</version>
-		</dependency>
-	</dependencies>
-	<build>
-		<finalName>zplatform-rmi</finalName>
-	</build>
-</project>
- -->
+<!-- <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"> 
+	<modelVersion>4.0.0</modelVersion> <parent> <groupId>com.zlebank.zplatform</groupId> 
+	<artifactId>zplatform-trade-deploy</artifactId> <version>1.2.0-SNAPSHOT</version> 
+	<relativePath>../zplatform-trade-deploy/pom.xml</relativePath> </parent> 
+	<artifactId>zplatform-rmi</artifactId> <packaging>war</packaging> <version>0.0.1-SNAPSHOT</version> 
+	<name>zplatform-rmi Maven Webapp</name> <url>http://maven.apache.org</url> 
+	<dependencies> <dependency> <groupId>com.caucho</groupId> <artifactId>hessian</artifactId> 
+	<version>4.0.7</version> </dependency> <dependency> <groupId>org.springframework</groupId> 
+	<artifactId>spring-webmvc</artifactId> <version>${springframework.version}</version> 
+	</dependency> <dependency> <groupId>org.springframework</groupId> <artifactId>spring-web</artifactId> 
+	<version>${springframework.version}</version> </dependency> <dependency> 
+	<groupId>org.springframework</groupId> <artifactId>spring-test</artifactId> 
+	<version>${springframework.version}</version> </dependency> <dependency> 
+	<groupId>com.zlebank.zplatform</groupId> <artifactId>zplatform-trade-cmbc</artifactId> 
+	<version>1.2.0-SNAPSHOT</version> </dependency> </dependencies> <build> <finalName>zplatform-rmi</finalName> 
+	</build> </project> -->
  

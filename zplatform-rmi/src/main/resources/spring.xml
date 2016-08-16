@@ -14,7 +14,7 @@
 	<!-- 引入属性文件Hibernate属性配置 -->
 	<context:property-placeholder location="classpath:*.properties" />
 	<context:component-scan base-package="com.zlebank.zplatform"></context:component-scan>
-	<bean id="springContext" class="com.zlebank.zplatform.trade.utils.SpringContext"></bean>
+	
 
 	<bean class="com.zlebank.zplatform.hessian.hessianspring.HessianClientScannerConfigurer">
     <property name="basePackage" value="com.zlebank.zplatform.rmi"></property>

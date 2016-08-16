@@ -11,8 +11,14 @@
 package com.zlebank.zplatform.rmi.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
+import com.alibaba.fastjson.JSON;
 import com.caucho.hessian.server.HessianServlet;
+import com.zlebank.zplatform.member.dao.MemberDAO;
+import com.zlebank.zplatform.member.dao.ParaDicDAO;
+import com.zlebank.zplatform.member.pojo.PojoMember;
+import com.zlebank.zplatform.member.service.MemberAccountService;
 import com.zlebank.zplatform.member.service.MemberService;
 import com.zlebank.zplatform.rmi.IHello;
 
@@ -33,12 +39,13 @@ public class IHelloImpl extends HessianServlet implements IHello {
 	
 	
 	@Autowired
-	private MemberService memberService;
-	//private ICMBCTransferService cmbcTransferService;
+	private ParaDicDAO paraDicDAO;
 	@Override
     public String sayHello() {
         // TODO Auto-generated method stub
-        return ""; //cmbcTransferService.singleTransfer(null).getResultObj().toString();
+		
+		String seqNextval = paraDicDAO.getSeqNextval("seq_checkstandver");
+        return seqNextval; //cmbcTransferService.singleTransfer(null).getResultObj().toString();
     }
 
 }
