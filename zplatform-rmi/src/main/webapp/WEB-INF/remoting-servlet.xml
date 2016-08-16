@@ -16,7 +16,7 @@
 		<property name="serviceInterface" value="com.zlebank.zplatform.rmi.ITestCase" />
 	</bean>
 	<!-- 放入ServiceExporter -->
-	<bean name="/rmiMemberAccountService" class="com.zlebank.zplatform.rmi.IMemberAccountServiceExporter" />
+	<bean name="/rmiMemberAccountService" class="com.zlebank.zplatform.rmi.ServiceExporter.IMemberAccountServiceExporter" />
 	<!-- <bean id="RmiMemberAccountService" class="com.zlebank.zplatform.rmi.impl.IMemberAccountServiceImpl" /> -->
 	<!-- <bean name="/rmiMemberAccountService"
 		class="org.springframework.remoting.caucho.HessianServiceExporter">
