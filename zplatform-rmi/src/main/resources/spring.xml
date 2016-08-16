@@ -12,10 +12,18 @@
 	<context:annotation-config />
 	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 	<!-- 引入属性文件Hibernate属性配置 -->
-	<context:property-placeholder location="classpath:*.properties" />
 	<context:component-scan base-package="com.zlebank.zplatform"></context:component-scan>
-	
-
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">  
+        <property name="locations">  
+           <list>  
+              <!-- 推荐使用file的方式引入，这样可以将配置和代码分离   -->
+              <value>file:D:/cert/*.properties</value> 
+              <value>file:/home/web/trade/config/*.properties</value> 
+              <value>classpath:*.properties</value>  
+            </list>  
+        </property>  
+    </bean>
+	<bean id="springContext" class="com.zlebank.zplatform.trade.utils.SpringContext"/>
 	<bean class="com.zlebank.zplatform.hessian.hessianspring.HessianClientScannerConfigurer">
     <property name="basePackage" value="com.zlebank.zplatform.rmi"></property>
     <property name="annotationClass" value="com.zlebank.zplatform.hessian.core.Hessian"></property>

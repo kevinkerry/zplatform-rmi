@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:jee="http://www.springframework.org/schema/jee" 
 	xsi:schemaLocation="
 	http://www.springframework.org/schema/beans 
 	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
@@ -54,7 +57,7 @@
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle9Dialect</prop>
 				<!-- <prop key="hibernate.hbm2ddl.auto">validate</prop> -->
-
+				<prop key="hibernate.connection.SetBigStringTryClob">true</prop>
 				<prop key="hibernate.autoReconnect">true</prop>
 				<prop key="hibernate.show_sql">false</prop>
 				<prop key="hibernate.format_sql">true</prop>
@@ -104,8 +107,10 @@
 			<list>
 				<value>com.zlebank.zplatform.trade.model</value>
 				<value>com.zlebank.zplatform.acc.pojo</value>
+				<value>com.zlebank.zplatform.sms.pojo</value>
 				<value>com.zlebank.zplatform.commons.dao.pojo</value>
 				<value>com.zlebank.zplatform.member.pojo</value>
+				<value>com.zlebank.zplatform.specification.pojo</value>
 			</list>
 		</property>
 
@@ -122,5 +127,31 @@
 	</bean>
 	<tx:annotation-driven transaction-manager="txManager" />
 
+<bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="maxIdle" value="${redis.maxIdle}" />
+        <property name="maxTotal" value="${redis.maxActive}" />
+        <property name="maxWaitMillis" value="${redis.maxWait}" />
+        <property name="testOnBorrow" value="${redis.testOnBorrow}" />
+    </bean>
 
+    <bean id="connectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
+        p:host-name="${redis.host}" p:port="${redis.port}"  p:pool-config-ref="poolConfig"/>
+
+ 	<!-- <bean id="stringSerializer" class="org.springframework.data.redis.serializer.StringRedisSerializer"/> -->
+    
+    <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">   
+        <property name="connectionFactory"   ref="connectionFactory" />   
+        <property name="keySerializer">   
+            <bean class="org.springframework.data.redis.serializer.StringRedisSerializer" />   
+        </property>      
+        <property name="valueSerializer">   
+            <bean class="org.springframework.data.redis.serializer.JdkSerializationRedisSerializer" />   
+        </property>   
+        <property name="hashKeySerializer">     
+           <bean class="org.springframework.data.redis.serializer.StringRedisSerializer"/>     
+        </property>   
+        <property name="hashValueSerializer">   
+           <bean class="org.springframework.data.redis.serializer.JdkSerializationRedisSerializer"/>     
+        </property> 
+     </bean> 
 </beans>

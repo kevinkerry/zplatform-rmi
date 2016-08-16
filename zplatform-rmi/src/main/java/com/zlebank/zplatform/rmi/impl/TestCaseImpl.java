@@ -13,9 +13,11 @@ package com.zlebank.zplatform.rmi.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.alibaba.fastjson.JSON;
 import com.caucho.hessian.server.HessianServlet;
-import com.zlebank.zplatform.member.dao.ParaDicDAO;
 import com.zlebank.zplatform.rmi.ITestCase;
+import com.zlebank.zplatform.trade.model.TxnsLogModel;
+import com.zlebank.zplatform.trade.service.ITxnsLogService;
 
 /**
  * Class Description
@@ -33,7 +35,8 @@ public class TestCaseImpl extends HessianServlet implements ITestCase{
 	 */
 	private static final long serialVersionUID = -384423138675900382L;
 	@Autowired
-	private ParaDicDAO paraDicDAO;
+	private ITxnsLogService txnsLogService;
+	
 	
 	/**
 	 *
@@ -42,8 +45,8 @@ public class TestCaseImpl extends HessianServlet implements ITestCase{
 	 */
 	@Override
 	public String test(String para) {
-		String seqNextval = paraDicDAO.getSeqNextval("seq_checkstandver");
-        return seqNextval; 
+		TxnsLogModel txnsLogByTxnseqno = txnsLogService.getTxnsLogByTxnseqno("1608169900056461");
+        return JSON.toJSONString(txnsLogByTxnseqno); 
 	}
 
 	
