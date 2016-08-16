@@ -1,0 +1,25 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+	<!-- 定义普通的bean实例 -->
+	<bean id="Hello" class="com.zlebank.zplatform.rmi.impl.IHelloImpl" />
+	<!-- 使用HessianServiceExporter 将普通bean导出成Hessian服务 -->
+
+	<bean name="/remoting"
+		class="org.springframework.remoting.caucho.HessianServiceExporter">
+		<!-- 需要导出的目标bean -->
+		<property name="service" ref="Hello" />
+		<!-- Hessian服务的接口 -->
+		<property name="serviceInterface" value="com.zlebank.zplatform.rmi.IHello" />
+	</bean>
+	<bean
+		class="com.zlebank.zplatform.hessian.api.HessianServerScannerConfigurer">
+		<property name="basePackage" value="com.zlebank.zplatform.rmi"></property>
+		<property name="annotationClass" value="com.zlebank.zplatform.hessian.core.Hessian"></property>
+	</bean>
+</beans>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" metadata-complete="true" version="2.4">
+	<display-name>Archetype Created Web Application</display-name>
+	<servlet>
+		<servlet-name>Hello</servlet-name>
+		<servlet-class>com.caucho.hessian.server.HessianServlet</servlet-class>
+		<init-param>
+			<param-name>home-class</param-name>
+			<param-value>com.zlebank.zplatform.rmi.impl.IHelloImpl</param-value>
+		</init-param>
+		<init-param>
+			<param-name>home-api</param-name>
+			<param-value>com.zlebank.zplatform.rmi.IHello</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Hello</servlet-name>
+		<url-pattern>/Hello</url-pattern>
+	</servlet-mapping>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class> <!--添加监听器 -->
+	</listener>
+	<!-- 指定spring的配置文件在哪里，在这个配置文件中导出了Hessian服务 -->
+	<context-param>
+	    <param-name>contextConfigLocation</param-name>
+	    <param-value>/WEB-INF/remoting-servlet.xml,/WEB-INF/classes/spring.xml,/WEB-INF/classes/spring-hibernate.xml</param-value>
+	</context-param>
+	
+	<!-- Hessian通过Servlet提供远程服务，需要将某个匹配的模式映射到hessian服务中，spring的dispatcherServlet能完成此功能，DispatcherServlet可将匹配模式的请求转发到Hessian服务，web.xml只是定义了“请求转发器”，该转发器将匹配/remoting/*的请求截获，转发给context的bean处理。而HessianServiceExporter提供bean服务。 -->
+	<servlet>
+		<servlet-name>remoting</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>remoting</servlet-name>
+		<url-pattern>/remoting/*</url-pattern>
+	</servlet-mapping>
+</web-app>
