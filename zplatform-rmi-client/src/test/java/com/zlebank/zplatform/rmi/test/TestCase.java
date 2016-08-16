@@ -31,8 +31,11 @@ public class TestCase{
 	@Autowired
 	private IHello hello;
 	
+	@Autowired
+	private ITestCase testCase;
+	
 	@Test
 	public void test(){
-		System.out.println(hello.sayHello());
+		System.out.println(testCase.test("1"));
 	}
 }

@@ -11,6 +11,7 @@
 package com.zlebank.zplatform.rmi.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.alibaba.fastjson.JSON;
@@ -30,6 +31,7 @@ import com.zlebank.zplatform.rmi.IHello;
  * @date 2016年1月12日 下午3:55:36
  * @since 
  */
+@Repository("hello")
 public class IHelloImpl extends HessianServlet implements IHello {
 
     /**

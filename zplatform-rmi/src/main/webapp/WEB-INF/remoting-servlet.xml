@@ -6,16 +6,14 @@
            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 
-	<!-- 定义普通的bean实例 -->
-	<bean id="Hello" class="com.zlebank.zplatform.rmi.impl.IHelloImpl" />
-	<!-- 使用HessianServiceExporter 将普通bean导出成Hessian服务 -->
-
-	<bean name="/remoting"
+	
+	<bean id="TestCase" class="com.zlebank.zplatform.rmi.impl.TestCaseImpl" />
+	<bean name="/testcase"
 		class="org.springframework.remoting.caucho.HessianServiceExporter">
 		<!-- 需要导出的目标bean -->
-		<property name="service" ref="Hello" />
+		<property name="service" ref="TestCase" />
 		<!-- Hessian服务的接口 -->
-		<property name="serviceInterface" value="com.zlebank.zplatform.rmi.IHello" />
+		<property name="serviceInterface" value="com.zlebank.zplatform.rmi.ITestCase" />
 	</bean>
 	<bean
 		class="com.zlebank.zplatform.hessian.api.HessianServerScannerConfigurer">
