@@ -12,7 +12,7 @@
 
 
 
-	
+	<import resource="remoting-trade-servlet.xml"/>
 	<!--启用注解 -->
 	<context:annotation-config />
 	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>

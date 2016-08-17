@@ -50,6 +50,11 @@
 		</dependency>
 
 
+		<dependency>
+			<groupId>com.zlebank.zplatform</groupId>
+			<artifactId>zplatform-remote-bean</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>zplatform-rmi</finalName>

@@ -10,14 +10,18 @@
  */
 package com.zlebank.zplatform.rmi.test;
 
-import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.alibaba.fastjson.JSON;
-import com.zlebank.zplatform.rmi.trade.IGateWayService;
+import com.zlebank.zplatform.acc.service.AccEntryService;
+import com.zlebank.zplatform.member.service.CoopInstiService;
+import com.zlebank.zplatform.member.service.MemberAccountService;
+import com.zlebank.zplatform.member.service.MemberBankCardService;
+import com.zlebank.zplatform.member.service.MemberOperationService;
+import com.zlebank.zplatform.member.service.MemberService;
+import com.zlebank.zplatform.member.service.MerchMKService;
 
 /**
 **
@@ -31,20 +35,30 @@ import com.zlebank.zplatform.rmi.trade.IGateWayService;
 
 @RunWith(SpringJUnit4ClassRunner.class)  
 @ContextConfiguration("/remoting-client.xml")  
-public class TestCase extends BaseTest{
-	@Autowired
-	private IHello hello;
-
+public class TestCase{
 	
 	
-	@Autowired
-	private IGateWayService gateWayService;
-	@Autowired
-	private ITestCase testCase;
-	
-	@Test
-	public void test(){
-		System.out.println(JSON.toJSONString(gateWayService.getOrderinfoByTN("160815001400055419")));
-		System.out.println(testCase.test("1"));
-	}
+	    
+	    @Autowired
+	    private MemberOperationService memberOperationServiceImpl;
+	    @Autowired
+	    private MemberService memberServiceImpl;
+	    @Autowired
+	    private MemberAccountService memberAccountServiceImpl;
+		@Autowired
+		private MemberBankCardService memberBankCardService;
+	    @Autowired
+	    private CoopInstiService coopInstiService;
+	    @Autowired
+		private MemberOperationService memberOperationService;
+		@Autowired
+		private MemberService memberService;
+		@Autowired
+		private MerchMKService merchMKService;
+	    @Autowired
+	    private AccEntryService accEntryService;
+	   
+		
+	    
+	    
 }
