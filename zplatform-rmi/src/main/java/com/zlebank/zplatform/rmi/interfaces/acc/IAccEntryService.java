@@ -11,14 +11,11 @@
 package com.zlebank.zplatform.rmi.interfaces.acc;
 import java.util.List;
 
-import com.zlebank.zplatform.acc.bean.AccEntry;
-import com.zlebank.zplatform.acc.bean.AccEntryQuery;
 import com.zlebank.zplatform.acc.bean.TradeInfo;
 import com.zlebank.zplatform.acc.exception.AbstractBusiAcctException;
 import com.zlebank.zplatform.acc.exception.AccBussinessException;
 import com.zlebank.zplatform.acc.exception.IllegalEntryRequestException;
 import com.zlebank.zplatform.acc.service.entry.EntryEvent;
-import com.zlebank.zplatform.commons.service.IBasePageService;
 
 /**
  * Class Description
@@ -40,7 +37,7 @@ public interface IAccEntryService {
      * @return
      */
     public List<Long> accountBatchPre(int fetchSize)
-            throws AccBussinessException;
+            throws Exception;
     /**
      * 批处理记账【执行】
      * 
@@ -48,7 +45,7 @@ public interface IAccEntryService {
      *            【预处理】中返回的值
      * @return
      */
-    public void accountBatch(List<Long> accEntry) throws AccBussinessException;
+    public void accountBatch(List<Long> accEntry) throws Exception;
 
     /**
      * 分录处理
@@ -60,6 +57,5 @@ public interface IAccEntryService {
      * @throws BussinessException
      */
     public void accEntryProcess(TradeInfo tradeInfo, EntryEvent entryEvent)
-            throws AccBussinessException, AbstractBusiAcctException,
-            NumberFormatException, IllegalEntryRequestException;
+            throws Exception;
 }
