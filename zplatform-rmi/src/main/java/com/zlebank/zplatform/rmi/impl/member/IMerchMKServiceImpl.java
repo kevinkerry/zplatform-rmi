@@ -10,10 +10,12 @@
  */
 package com.zlebank.zplatform.rmi.impl.member;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.caucho.hessian.server.HessianServlet;
 import com.zlebank.zplatform.member.bean.MerchMK;
+import com.zlebank.zplatform.member.service.MerchMKService;
 import com.zlebank.zplatform.rmi.interfaces.member.IMerchMKService;
 
 /**
@@ -26,7 +28,8 @@ import com.zlebank.zplatform.rmi.interfaces.member.IMerchMKService;
  */
 @Repository
 public class IMerchMKServiceImpl extends HessianServlet implements IMerchMKService {
-
+    @Autowired
+    private MerchMKService merchMkService;
     /**
      * serialVersionUID
      */
@@ -39,8 +42,7 @@ public class IMerchMKServiceImpl extends HessianServlet implements IMerchMKServi
      */
     @Override
     public MerchMK get(String memberId) {
-        // TODO Auto-generated method stub
-        return null;
+        return merchMkService.get(memberId);
     }
 
     /**
@@ -52,8 +54,7 @@ public class IMerchMKServiceImpl extends HessianServlet implements IMerchMKServi
      */
     @Override
     public boolean verify(String memberId, String signedData, String originData) {
-        // TODO Auto-generated method stub
-        return false;
+        return merchMkService.verify(memberId, signedData, originData);
     }
 
     /**
@@ -64,8 +65,7 @@ public class IMerchMKServiceImpl extends HessianServlet implements IMerchMKServi
      */
     @Override
     public String sign(String memberId, String originData) {
-        // TODO Auto-generated method stub
-        return null;
+        return merchMkService.sign(memberId, originData);
     }
 
 }

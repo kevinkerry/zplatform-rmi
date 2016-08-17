@@ -10,6 +10,7 @@
  */
 package com.zlebank.zplatform.rmi.impl.member;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.caucho.hessian.server.HessianServlet;
@@ -17,6 +18,7 @@ import com.zlebank.zplatform.acc.exception.AbstractBusiAcctException;
 import com.zlebank.zplatform.member.bean.MerchantBean;
 import com.zlebank.zplatform.member.exception.MemberBussinessException;
 import com.zlebank.zplatform.member.pojo.PojoMerchDeta;
+import com.zlebank.zplatform.member.service.MerchService;
 import com.zlebank.zplatform.rmi.interfaces.member.IMerchService;
 
 /**
@@ -31,6 +33,13 @@ import com.zlebank.zplatform.rmi.interfaces.member.IMerchService;
 public class IMerchServiceImpl extends HessianServlet implements IMerchService {
 
     /**
+     * serialVersionUID
+     */
+    private static final long serialVersionUID = 3083698000521228387L;
+    
+    @Autowired 
+    private MerchService merchService;
+    /**
      *
      * @param mb
      * @param userId
@@ -41,8 +50,7 @@ public class IMerchServiceImpl extends HessianServlet implements IMerchService {
     @Override
     public String createMinorMerchant(MerchantBean mb, Long userId)
             throws MemberBussinessException, AbstractBusiAcctException {
-        // TODO Auto-generated method stub
-        return null;
+        return merchService.createMinorMerchant(mb, userId);
     }
 
     /**
@@ -52,8 +60,7 @@ public class IMerchServiceImpl extends HessianServlet implements IMerchService {
      */
     @Override
     public PojoMerchDeta getParentMerch(String memberId) {
-        // TODO Auto-generated method stub
-        return null;
+       return merchService.getParentMerch(memberId);
     }
 
     /**
@@ -63,8 +70,7 @@ public class IMerchServiceImpl extends HessianServlet implements IMerchService {
      */
     @Override
     public PojoMerchDeta getMerchByTaxno(String taxno) {
-        // TODO Auto-generated method stub
-        return null;
+        return merchService.getMerchByTaxno(taxno);
     }
 
     /**
@@ -74,8 +80,7 @@ public class IMerchServiceImpl extends HessianServlet implements IMerchService {
      */
     @Override
     public PojoMerchDeta getMerchByLicenceNo(String licenceNo) {
-        // TODO Auto-generated method stub
-        return null;
+        return merchService.getMerchByLicenceNo(licenceNo);
     }
 
     /**
@@ -85,8 +90,7 @@ public class IMerchServiceImpl extends HessianServlet implements IMerchService {
      */
     @Override
     public PojoMerchDeta getMerchByEmail(String email) {
-        // TODO Auto-generated method stub
-        return null;
+        return merchService.getMerchByEmail(email);
     }
 
     /**
@@ -96,8 +100,7 @@ public class IMerchServiceImpl extends HessianServlet implements IMerchService {
      */
     @Override
     public PojoMerchDeta getMerchByPhone(String phone) {
-        // TODO Auto-generated method stub
-        return null;
+        return merchService.getMerchByPhone(phone);
     }
 
     /**
@@ -107,8 +110,7 @@ public class IMerchServiceImpl extends HessianServlet implements IMerchService {
      */
     @Override
     public PojoMerchDeta getMerchBymemberId(String memberId) {
-        // TODO Auto-generated method stub
-        return null;
+        return merchService.getMerchBymemberId(memberId);
     }
 
     /**
@@ -117,8 +119,7 @@ public class IMerchServiceImpl extends HessianServlet implements IMerchService {
      */
     @Override
     public void update(PojoMerchDeta pojoMerchDeta) {
-        // TODO Auto-generated method stub
-
+        merchService.update(pojoMerchDeta);
     }
 
 }

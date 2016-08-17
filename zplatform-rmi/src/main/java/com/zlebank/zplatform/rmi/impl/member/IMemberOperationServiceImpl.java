@@ -10,6 +10,7 @@
  */
 package com.zlebank.zplatform.rmi.impl.member;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.caucho.hessian.server.HessianServlet;
@@ -20,6 +21,7 @@ import com.zlebank.zplatform.member.exception.CreateMemberFailedException;
 import com.zlebank.zplatform.member.exception.DataCheckFailedException;
 import com.zlebank.zplatform.member.exception.InvalidMemberDataException;
 import com.zlebank.zplatform.member.exception.LoginFailedException;
+import com.zlebank.zplatform.member.service.MemberOperationService;
 import com.zlebank.zplatform.rmi.interfaces.member.IMemberOperationService;
 
 /**
@@ -32,7 +34,8 @@ import com.zlebank.zplatform.rmi.interfaces.member.IMemberOperationService;
  */
 @Repository
 public class IMemberOperationServiceImpl extends HessianServlet implements IMemberOperationService {
-
+    @Autowired
+    private MemberOperationService memberOperationService;
     /**
      * serialVersionUID
      */
@@ -51,8 +54,7 @@ public class IMemberOperationServiceImpl extends HessianServlet implements IMemb
     public String registMember(MemberType memberType, MemberBean member)
             throws InvalidMemberDataException, CreateMemberFailedException,
             CreateBusiAcctFailedException {
-        // TODO Auto-generated method stub
-        return null;
+        return memberOperationService.registMember(memberType, member);
     }
 
     /**
@@ -66,8 +68,7 @@ public class IMemberOperationServiceImpl extends HessianServlet implements IMemb
     @Override
     public String login(MemberType memberType, MemberBean member)
             throws DataCheckFailedException, LoginFailedException {
-        // TODO Auto-generated method stub
-        return null;
+        return memberOperationService.login(memberType, member);
     }
 
     /**
@@ -80,8 +81,7 @@ public class IMemberOperationServiceImpl extends HessianServlet implements IMemb
     @Override
     public boolean verifyPayPwd(MemberType memberType, MemberBean member)
             throws DataCheckFailedException {
-        // TODO Auto-generated method stub
-        return false;
+        return memberOperationService.verifyPayPwd(memberType, member);
     }
 
     /**
@@ -98,8 +98,7 @@ public class IMemberOperationServiceImpl extends HessianServlet implements IMemb
             MemberBean member,
             String newPwd,
             boolean isCheckOldPassword) throws DataCheckFailedException {
-        // TODO Auto-generated method stub
-        return false;
+        return memberOperationService.resetLoginPwd(memberType, member, newPwd, isCheckOldPassword);
     }
 
     /**
@@ -116,8 +115,7 @@ public class IMemberOperationServiceImpl extends HessianServlet implements IMemb
             MemberBean member,
             String newPayPwd,
             boolean isCheckOldPassword) throws DataCheckFailedException {
-        // TODO Auto-generated method stub
-        return false;
+        return memberOperationService.resetPayPwd(memberType, member, newPayPwd, isCheckOldPassword);
     }
 
 }

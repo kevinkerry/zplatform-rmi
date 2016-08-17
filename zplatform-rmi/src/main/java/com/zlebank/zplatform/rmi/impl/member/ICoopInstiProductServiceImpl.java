@@ -12,11 +12,13 @@ package com.zlebank.zplatform.rmi.impl.member;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.caucho.hessian.server.HessianServlet;
 import com.zlebank.zplatform.commons.dao.pojo.ProductModel;
 import com.zlebank.zplatform.member.exception.AbstractCoopInstiException;
+import com.zlebank.zplatform.member.service.CoopInstiProductService;
 import com.zlebank.zplatform.rmi.interfaces.member.ICoopInstiProductService;
 
 /**
@@ -29,7 +31,8 @@ import com.zlebank.zplatform.rmi.interfaces.member.ICoopInstiProductService;
  */
 @Repository
 public class ICoopInstiProductServiceImpl extends HessianServlet implements ICoopInstiProductService {
-
+    @Autowired
+    private CoopInstiProductService coopInstiProductService;
     /**
      * serialVersionUID
      */
@@ -44,8 +47,7 @@ public class ICoopInstiProductServiceImpl extends HessianServlet implements ICoo
     @Override
     public List<ProductModel> getProducts(long coopInstiId)
             throws AbstractCoopInstiException {
-        // TODO Auto-generated method stub
-        return null;
+        return coopInstiProductService.getProducts(coopInstiId);
     }
 
 }

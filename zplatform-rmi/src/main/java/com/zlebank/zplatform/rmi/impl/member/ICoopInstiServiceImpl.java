@@ -12,6 +12,7 @@ package com.zlebank.zplatform.rmi.impl.member;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.caucho.hessian.server.HessianServlet;
@@ -19,6 +20,7 @@ import com.zlebank.zplatform.member.bean.CoopInsti;
 import com.zlebank.zplatform.member.bean.CoopInstiMK;
 import com.zlebank.zplatform.member.bean.enums.TerminalAccessType;
 import com.zlebank.zplatform.member.exception.AbstractCoopInstiException;
+import com.zlebank.zplatform.member.service.CoopInstiService;
 import com.zlebank.zplatform.rmi.interfaces.member.ICoopInstiService;
 
 /**
@@ -31,7 +33,8 @@ import com.zlebank.zplatform.rmi.interfaces.member.ICoopInstiService;
  */
 @Repository
 public class ICoopInstiServiceImpl extends HessianServlet implements ICoopInstiService {
-
+    @Autowired
+    private CoopInstiService coopInstiService;
     /**
      * serialVersionUID
      */
@@ -46,8 +49,7 @@ public class ICoopInstiServiceImpl extends HessianServlet implements ICoopInstiS
     @Override
     public CoopInstiMK getCoopInstiMK(String instiCode,
             TerminalAccessType terminalAccessType) {
-        // TODO Auto-generated method stub
-        return null;
+        return coopInstiService.getCoopInstiMK(instiCode, terminalAccessType);
     }
 
     /**
@@ -60,8 +62,7 @@ public class ICoopInstiServiceImpl extends HessianServlet implements ICoopInstiS
     @Override
     public String createCoopInsti(String instiName, long userId)
             throws AbstractCoopInstiException {
-        // TODO Auto-generated method stub
-        return null;
+        return coopInstiService.createCoopInsti(instiName, userId);
     }
 
     /**
@@ -70,8 +71,7 @@ public class ICoopInstiServiceImpl extends HessianServlet implements ICoopInstiS
      */
     @Override
     public List<CoopInsti> getAllCoopInsti() {
-        // TODO Auto-generated method stub
-        return null;
+        return coopInstiService.getAllCoopInsti();
     }
 
     /**
@@ -81,8 +81,7 @@ public class ICoopInstiServiceImpl extends HessianServlet implements ICoopInstiS
      */
     @Override
     public CoopInsti getInstiByInstiCode(String instiCode) {
-        // TODO Auto-generated method stub
-        return null;
+        return coopInstiService.getInstiByInstiCode(instiCode);
     }
 
     /**
@@ -92,8 +91,7 @@ public class ICoopInstiServiceImpl extends HessianServlet implements ICoopInstiS
      */
     @Override
     public CoopInsti getInstiByInstiID(long instiId) {
-        // TODO Auto-generated method stub
-        return null;
+        return coopInstiService.getInstiByInstiID(instiId);
     }
 
 }

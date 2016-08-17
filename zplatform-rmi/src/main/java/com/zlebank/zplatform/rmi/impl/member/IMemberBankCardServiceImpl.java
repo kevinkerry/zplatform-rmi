@@ -10,6 +10,7 @@
  */
 package com.zlebank.zplatform.rmi.impl.member;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.caucho.hessian.server.HessianServlet;
@@ -18,6 +19,7 @@ import com.zlebank.zplatform.member.bean.QuickpayCustBean;
 import com.zlebank.zplatform.member.bean.RealNameBean;
 import com.zlebank.zplatform.member.exception.DataCheckFailedException;
 import com.zlebank.zplatform.member.exception.UnbindBankFailedException;
+import com.zlebank.zplatform.member.service.MemberBankCardService;
 import com.zlebank.zplatform.rmi.interfaces.member.IMemberBankCardService;
 
 /**
@@ -30,7 +32,8 @@ import com.zlebank.zplatform.rmi.interfaces.member.IMemberBankCardService;
  */
 @Repository
 public class IMemberBankCardServiceImpl extends HessianServlet implements IMemberBankCardService {
-
+    @Autowired
+    private MemberBankCardService memberBankCardService;
     /**
      * serialVersionUID
      */
@@ -42,8 +45,7 @@ public class IMemberBankCardServiceImpl extends HessianServlet implements IMembe
      */
     @Override
     public void saveRealNameInfo(RealNameBean bean) {
-        // TODO Auto-generated method stub
-
+        memberBankCardService.saveRealNameInfo(bean);
     }
 
     /**
@@ -53,8 +55,7 @@ public class IMemberBankCardServiceImpl extends HessianServlet implements IMembe
      */
     @Override
     public RealNameBean queryRealNameInfo(RealNameBean bean) {
-        // TODO Auto-generated method stub
-        return null;
+        return memberBankCardService.queryRealNameInfo(bean);
     }
 
     /**
@@ -64,8 +65,7 @@ public class IMemberBankCardServiceImpl extends HessianServlet implements IMembe
      */
     @Override
     public long saveQuickPayCust(QuickpayCustBean bean) {
-        // TODO Auto-generated method stub
-        return 0;
+        return memberBankCardService.saveQuickPayCust(bean);
     }
 
     /**
@@ -77,8 +77,7 @@ public class IMemberBankCardServiceImpl extends HessianServlet implements IMembe
     @Override
     public void unbindQuickPayCust(QuickpayCustBean bean)
             throws DataCheckFailedException, UnbindBankFailedException {
-        // TODO Auto-generated method stub
-
+        memberBankCardService.unbindQuickPayCust(bean);
     }
 
     /**
@@ -96,8 +95,7 @@ public class IMemberBankCardServiceImpl extends HessianServlet implements IMembe
             String devId,
             int offset,
             int pageSize) {
-        // TODO Auto-generated method stub
-        return null;
+        return memberBankCardService.queryMemberBankCard(memberId, cardType, devId, offset, pageSize);
     }
 
     /**
@@ -107,8 +105,7 @@ public class IMemberBankCardServiceImpl extends HessianServlet implements IMembe
      */
     @Override
     public long saveQuickPayCustExt(QuickpayCustBean bean) {
-        // TODO Auto-generated method stub
-        return 0;
+        return memberBankCardService.saveQuickPayCustExt(bean);
     }
 
 }

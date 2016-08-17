@@ -10,10 +10,12 @@
  */
 package com.zlebank.zplatform.rmi.impl.member;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.caucho.hessian.server.HessianServlet;
 import com.zlebank.zplatform.member.bean.EnterpriseBean;
+import com.zlebank.zplatform.member.service.EnterpriseService;
 import com.zlebank.zplatform.rmi.interfaces.member.IEnterpriseService;
 
 /**
@@ -26,7 +28,8 @@ import com.zlebank.zplatform.rmi.interfaces.member.IEnterpriseService;
  */
 @Repository
 public class IEnterpriseServiceImpl extends HessianServlet implements IEnterpriseService {
-
+    @Autowired
+    private EnterpriseService enterpriseService;
     /**
      * serialVersionUID
      */
@@ -39,8 +42,7 @@ public class IEnterpriseServiceImpl extends HessianServlet implements IEnterpris
      */
     @Override
     public EnterpriseBean getEnterpriseByMemberId(String memberId) {
-        // TODO Auto-generated method stub
-        return null;
+        return enterpriseService.getEnterpriseByMemberId(memberId);
     }
 
 }

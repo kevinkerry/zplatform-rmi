@@ -10,6 +10,7 @@
  */
 package com.zlebank.zplatform.rmi.impl.member;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.caucho.hessian.server.HessianServlet;
@@ -18,6 +19,7 @@ import com.zlebank.zplatform.member.bean.Person;
 import com.zlebank.zplatform.member.bean.PersonManager;
 import com.zlebank.zplatform.member.exception.MemberBussinessException;
 import com.zlebank.zplatform.member.pojo.PojoPersonDeta;
+import com.zlebank.zplatform.member.service.PersonService;
 import com.zlebank.zplatform.rmi.interfaces.member.IPersonService;
 
 /**
@@ -32,6 +34,13 @@ import com.zlebank.zplatform.rmi.interfaces.member.IPersonService;
 public class IPersonServiceImpl extends HessianServlet implements IPersonService {
 
     /**
+     * serialVersionUID
+     */
+    private static final long serialVersionUID = -6095229655103155643L;
+    
+    @Autowired
+    private PersonService personService;
+    /**
      *
      * @param pers
      * @param userId
@@ -42,8 +51,7 @@ public class IPersonServiceImpl extends HessianServlet implements IPersonService
     @Override
     public String save(Person pers, long userId)
             throws AbstractBusiAcctException, MemberBussinessException {
-        // TODO Auto-generated method stub
-        return null;
+        return personService.save(pers, userId);
     }
 
     /**
@@ -53,8 +61,7 @@ public class IPersonServiceImpl extends HessianServlet implements IPersonService
      */
     @Override
     public PojoPersonDeta getPersonByPhone(String phone) {
-        // TODO Auto-generated method stub
-        return null;
+       return personService.getPersonByPhone(phone);
     }
 
     /**
@@ -64,8 +71,7 @@ public class IPersonServiceImpl extends HessianServlet implements IPersonService
      */
     @Override
     public PojoPersonDeta getPersonByEmail(String email) {
-        // TODO Auto-generated method stub
-        return null;
+        return personService.getPersonByEmail(email);
     }
 
     /**
@@ -75,8 +81,7 @@ public class IPersonServiceImpl extends HessianServlet implements IPersonService
      */
     @Override
     public PersonManager getPersonBeanByMemberId(String memberId) {
-        // TODO Auto-generated method stub
-        return null;
+        return personService.getPersonBeanByMemberId(memberId);
     }
 
     /**
@@ -86,8 +91,7 @@ public class IPersonServiceImpl extends HessianServlet implements IPersonService
      */
     @Override
     public PojoPersonDeta getPersonByMemberId(String memberId) {
-        // TODO Auto-generated method stub
-        return null;
+        return personService.getPersonByMemberId(memberId);
     }
 
 }

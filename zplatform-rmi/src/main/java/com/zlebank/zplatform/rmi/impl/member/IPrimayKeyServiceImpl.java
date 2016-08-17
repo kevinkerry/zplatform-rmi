@@ -10,11 +10,13 @@
  */
 package com.zlebank.zplatform.rmi.impl.member;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.caucho.hessian.server.HessianServlet;
 import com.zlebank.zplatform.member.exception.MemberBussinessException;
 import com.zlebank.zplatform.member.exception.PrimaykeyGeneratedException;
+import com.zlebank.zplatform.member.service.PrimayKeyService;
 import com.zlebank.zplatform.rmi.interfaces.member.IPrimayKeyService;
 
 /**
@@ -33,7 +35,8 @@ public class IPrimayKeyServiceImpl extends HessianServlet implements IPrimayKeyS
      */
     private static final long serialVersionUID = -7071698251859580380L;
 
-
+    @Autowired
+    private PrimayKeyService primayKeyService;
     /**
      *
      * @param paraType
@@ -44,8 +47,7 @@ public class IPrimayKeyServiceImpl extends HessianServlet implements IPrimayKeyS
     @Override
     public String getNexId(String paraType, String seqName)
             throws PrimaykeyGeneratedException {
-        // TODO Auto-generated method stub
-        return null;
+        return primayKeyService.getNexId(paraType, seqName);
     }
 
 
@@ -58,8 +60,7 @@ public class IPrimayKeyServiceImpl extends HessianServlet implements IPrimayKeyS
      */
     @Override
     public String getNexId(String paraType) throws MemberBussinessException {
-        // TODO Auto-generated method stub
-        return null;
+        return primayKeyService.getNexId(paraType);
     }
 
 }

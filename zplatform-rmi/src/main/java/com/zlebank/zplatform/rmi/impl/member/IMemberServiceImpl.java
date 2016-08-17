@@ -12,6 +12,7 @@ package com.zlebank.zplatform.rmi.impl.member;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.caucho.hessian.server.HessianServlet;
@@ -25,6 +26,7 @@ import com.zlebank.zplatform.member.bean.MemberQuery;
 import com.zlebank.zplatform.member.bean.enums.MemberType;
 import com.zlebank.zplatform.member.exception.MemberBussinessException;
 import com.zlebank.zplatform.member.pojo.PojoMember;
+import com.zlebank.zplatform.member.service.MemberService;
 import com.zlebank.zplatform.rmi.interfaces.member.IMemberService;
 
 /**
@@ -37,7 +39,8 @@ import com.zlebank.zplatform.rmi.interfaces.member.IMemberService;
  */
 @Repository
 public class IMemberServiceImpl extends HessianServlet implements IMemberService {
-
+    @Autowired
+    private MemberService memberService;
     /**
      * serialVersionUID
      */
@@ -50,8 +53,7 @@ public class IMemberServiceImpl extends HessianServlet implements IMemberService
      */
     @Override
     public BusiAcctQuery getBusiQueryBybCode(String busiAcctCode) {
-        // TODO Auto-generated method stub
-        return null;
+        return memberService.getBusiQueryBybCode(busiAcctCode);
     }
 
     /**
@@ -61,8 +63,7 @@ public class IMemberServiceImpl extends HessianServlet implements IMemberService
      */
     @Override
     public List<BusiAcctQuery> getAllBusiByMId(String memberId) {
-        // TODO Auto-generated method stub
-        return null;
+        return memberService.getAllBusiByMId(memberId);
     }
 
     /**
@@ -77,8 +78,7 @@ public class IMemberServiceImpl extends HessianServlet implements IMemberService
     public PagedResult<AccEntry> getAccEntryByQuery(int page,
             int pageSize,
             MemberQuery mQuery) throws MemberBussinessException {
-        // TODO Auto-generated method stub
-        return null;
+        return memberService.getAccEntryByQuery(page, pageSize, mQuery);
     }
 
     /**
@@ -93,8 +93,7 @@ public class IMemberServiceImpl extends HessianServlet implements IMemberService
     @Override
     public List<BusiAcct> openBusiAcct(String name, String memberId, long userId)
             throws AbstractBusiAcctException, MemberBussinessException {
-        // TODO Auto-generated method stub
-        return null;
+        return memberService.openBusiAcct(name, memberId, userId);
     }
 
     /**
@@ -105,8 +104,7 @@ public class IMemberServiceImpl extends HessianServlet implements IMemberService
      */
     @Override
     public PojoMember getMbmberByMemberId(String memberId, MemberType type) {
-        // TODO Auto-generated method stub
-        return null;
+        return memberService.getMbmberByMemberId(memberId, type);
     }
 
     /**
@@ -116,8 +114,7 @@ public class IMemberServiceImpl extends HessianServlet implements IMemberService
      */
     @Override
     public PojoMember getMemberByEmail(String email) {
-        // TODO Auto-generated method stub
-        return null;
+        return memberService.getMemberByEmail(email);
     }
 
     /**
@@ -127,8 +124,7 @@ public class IMemberServiceImpl extends HessianServlet implements IMemberService
      */
     @Override
     public PojoMember getMemberByphone(String phone) {
-        // TODO Auto-generated method stub
-        return null;
+        return memberService.getMemberByphone(phone);
     }
 
     /**
@@ -138,8 +134,7 @@ public class IMemberServiceImpl extends HessianServlet implements IMemberService
      */
     @Override
     public String getMemberIdByBusiCode(String busiCode) {
-        // TODO Auto-generated method stub
-        return null;
+        return memberService.getMemberIdByBusiCode(busiCode);
     }
 
     /**
@@ -153,8 +148,7 @@ public class IMemberServiceImpl extends HessianServlet implements IMemberService
     public PagedResult<AccEntry> getAccEntryByQueryN(int page,
             int pageSize,
             MemberQuery mQuery) {
-        // TODO Auto-generated method stub
-        return null;
+        return memberService.getAccEntryByQueryN(page, pageSize, mQuery);
     }
 
     /**
@@ -168,8 +162,7 @@ public class IMemberServiceImpl extends HessianServlet implements IMemberService
     public PagedResult<BusiAcctQuery> getBusiAccount(QueryAccount qa,
             Integer page,
             Integer pageSize) {
-        // TODO Auto-generated method stub
-        return null;
+        return memberService.getBusiAccount(qa, page, pageSize);
     }
 
 }
