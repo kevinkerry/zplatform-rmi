@@ -165,4 +165,27 @@ public class IMemberServiceImpl extends HessianServlet implements IMemberService
         return memberService.getBusiAccount(qa, page, pageSize);
     }
 
+    /**
+     *
+     * @param loginName
+     * @param instiCode
+     * @return
+     */
+    @Override
+    public PojoMember getMemberByLoginNameAndCoopInsti(String loginName,
+            long instiCode) {
+        return memberService.getMemberByLoginNameAndCoopInsti(loginName, instiCode);
+    }
+
+    /**
+     *
+     * @param phone
+     * @param instiCode
+     * @return
+     */
+    @Override
+    public PojoMember getMemberByPhoneAndCoopInsti(String phone, long instiCode) {
+        return memberService.getMemberByPhoneAndCoopInsti(phone, instiCode);
+    }
+
 }

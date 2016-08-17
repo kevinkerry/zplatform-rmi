@@ -108,4 +108,32 @@ public class IMemberBankCardServiceImpl extends HessianServlet implements IMembe
         return memberBankCardService.saveQuickPayCustExt(bean);
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
+    @Override
+    public QuickpayCustBean getMemberBankCardById(Long id) {
+        return memberBankCardService.getMemberBankCardById(id);
+    }
+
+    /**
+     *
+     * @param cardNo
+     * @param accName
+     * @param phone
+     * @param cerId
+     * @param memberId
+     * @return
+     */
+    @Override
+    public QuickpayCustBean getCardList(String cardNo,
+            String accName,
+            String phone,
+            String cerId,
+            String memberId) {
+        return memberBankCardService.getCardList(cardNo, accName, phone, cerId, memberId);
+    }
+
 }
