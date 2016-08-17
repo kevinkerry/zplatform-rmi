@@ -8,7 +8,7 @@
  * Copyright (c) 2016,zlebank.All rights reserved.
  * 
  */
-package com.zlebank.zplatform.rmi.ServiceExporter;
+package com.zlebank.zplatform.rmi.serviceexporter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.remoting.caucho.HessianServiceExporter;

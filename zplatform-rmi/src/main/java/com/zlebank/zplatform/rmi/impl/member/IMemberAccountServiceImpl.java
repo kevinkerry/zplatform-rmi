@@ -8,7 +8,7 @@
  * Copyright (c) 2016,zlebank.All rights reserved.
  * 
  */
-package com.zlebank.zplatform.rmi.impl;
+package com.zlebank.zplatform.rmi.impl.member;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -23,7 +23,7 @@ import com.zlebank.zplatform.member.bean.enums.MemberType;
 import com.zlebank.zplatform.member.exception.DataCheckFailedException;
 import com.zlebank.zplatform.member.exception.GetAccountFailedException;
 import com.zlebank.zplatform.member.service.MemberAccountService;
-import com.zlebank.zplatform.rmi.IMemberAccountService;
+import com.zlebank.zplatform.rmi.member.IMemberAccountService;
 
 /**
  * 
