@@ -15,7 +15,7 @@
 	<context:annotation-config />
 	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 	<!-- 引入属性文件Hibernate属性配置 -->
-	<context:component-scan base-package="com.zlebank.zplatform.rmi.ServiceExporter"></context:component-scan>
+	<context:component-scan base-package="com.zlebank.zplatform.rmi.serviceexporter"></context:component-scan>
 	
 	<!-- <bean id="TestCase" class="com.zlebank.zplatform.rmi.impl.TestCaseImpl" />
 	<bean name="/testcase"
@@ -38,9 +38,8 @@
 			<property name="serviceInterface" value="com.zlebank.zplatform.rmi.IMemberAccountService" />
 		</bean> -->
 	<!-- end 会员模块 -->
-	<bean
-		class="com.zlebank.zplatform.hessian.api.HessianServerScannerConfigurer">
-		<property name="basePackage" value="com.zlebank.zplatform.rmi"></property>
+	<bean class="com.zlebank.zplatform.hessian.api.HessianServerScannerConfigurer">
+		<property name="basePackage" value="com.zlebank.zplatform.rmi。impl"></property><!-- 扫描实现servlet实现 -->
 		<property name="annotationClass" value="com.zlebank.zplatform.hessian.core.Hessian"></property>
 	</bean>
 </beans>
