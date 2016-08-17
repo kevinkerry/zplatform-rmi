@@ -12,6 +12,7 @@ package com.zlebank.zplatform.rmi.ServiceExporter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.remoting.caucho.HessianServiceExporter;
+import org.springframework.stereotype.Repository;
 
 import com.zlebank.zplatform.rmi.IMemberAccountService;
 import com.zlebank.zplatform.rmi.impl.IMemberAccountServiceImpl;
@@ -24,13 +25,14 @@ import com.zlebank.zplatform.rmi.impl.IMemberAccountServiceImpl;
  * @date 2016年8月16日 下午4:29:03
  * @since 
  */
+@Repository("/rmiMemberAccountService")
 public class IMemberAccountServiceExporter extends HessianServiceExporter {
        @Autowired
        private IMemberAccountServiceImpl iMemberAccountServiceImpl;
        @Autowired
-       public void setSer() {
+       public void setService() {
            super.setServiceInterface(IMemberAccountService.class);
            super.setService(iMemberAccountServiceImpl);
-       };
+       }
        
 }
