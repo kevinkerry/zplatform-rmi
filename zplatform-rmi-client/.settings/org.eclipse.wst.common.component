@@ -4,6 +4,15 @@
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/resources"/>
+        <dependent-module archiveName="zplatform-member-1.5.7.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/zplatform-member/zplatform-member">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="zplatform-acc-1.5.7.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/zplatform-acc/zplatform-acc">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="zplatform-member-api-1.5.7.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/zplatform-member-api/zplatform-member-api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="zplatform-rmi"/>
         <property name="java-output-path" value="/zplatform-rmi-client/target/classes"/>
     </wb-module>

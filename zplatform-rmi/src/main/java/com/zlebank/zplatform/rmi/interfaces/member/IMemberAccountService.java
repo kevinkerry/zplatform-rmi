@@ -8,7 +8,7 @@
  * Copyright (c) 2016,zlebank.All rights reserved.
  * 
  */
-package com.zlebank.zplatform.rmi;
+package com.zlebank.zplatform.rmi.interfaces.member;
 
 import com.zlebank.zplatform.acc.bean.enums.Usage;
 import com.zlebank.zplatform.commons.bean.PagedResult;
@@ -29,7 +29,7 @@ import com.zlebank.zplatform.member.exception.GetAccountFailedException;
  * @date 2016年8月16日 下午6:16:38
  * @since
  */
-@Hessian(context = Context.API_V2, uri = "/remoting/rmiMemberAccountService")
+//@Hessian(context = Context.API_V2, uri = "/remoting/rmiMemberAccountService")
 public interface IMemberAccountService {
     /**
      * 查询余额
