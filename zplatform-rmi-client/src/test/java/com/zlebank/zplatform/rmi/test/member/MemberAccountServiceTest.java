@@ -18,8 +18,8 @@ import com.zlebank.zplatform.acc.bean.enums.Usage;
 import com.zlebank.zplatform.member.bean.MemberAccountBean;
 import com.zlebank.zplatform.member.bean.MemberBean;
 import com.zlebank.zplatform.member.bean.enums.MemberType;
+import com.zlebank.zplatform.rmi.member.IMemberAccountService;
 import com.zlebank.zplatform.rmi.test.BaseTest;
-import com.zlebank.zplatform.rmi.test.IMemberAccountService;
 
 /**
  * Class Description
@@ -29,7 +29,7 @@ import com.zlebank.zplatform.rmi.test.IMemberAccountService;
  * @date 2016年8月16日 下午6:20:21
  * @since 
  */
-public class MemberAccountService extends BaseTest {
+public class MemberAccountServiceTest extends BaseTest {
     @Autowired
     private IMemberAccountService memberAccountService;
     @Test
