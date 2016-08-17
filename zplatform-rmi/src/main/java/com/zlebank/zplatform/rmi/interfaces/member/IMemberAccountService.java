@@ -29,7 +29,7 @@ import com.zlebank.zplatform.member.exception.GetAccountFailedException;
  * @date 2016年8月16日 下午6:16:38
  * @since
  */
-@Hessian(context = Context.API_V2, uri = "/remoting/rmiMemberAccountService")
+//@Hessian(context = Context.API_V2, uri = "/remoting/rmiMemberAccountService")
 public interface IMemberAccountService {
     /**
      * 查询余额
