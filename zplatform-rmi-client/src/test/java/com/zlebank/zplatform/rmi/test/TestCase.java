@@ -28,9 +28,13 @@ import com.zlebank.zplatform.rmi.trade.IGateWayService;
 * @date 2016年1月12日 下午3:56:56
 * @since 
 */
+
 @RunWith(SpringJUnit4ClassRunner.class)  
 @ContextConfiguration("/remoting-client.xml")  
-public class TestCase{
+public class TestCase extends BaseTest{
+	@Autowired
+	private IHello hello;
+
 	
 	
 	@Autowired

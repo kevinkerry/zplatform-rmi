@@ -1,22 +1,52 @@
 <?xml version = "1.0" encoding = "UTF-8" ?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
-	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" 
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		  http://www.springframework.org/schema/context 
+		  http://www.springframework.org/schema/context/spring-context-4.0.xsd
            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 
-	<import resource="remoting-trade-servlet.xml"/>
-	<bean id="TestCase" class="com.zlebank.zplatform.rmi.impl.TestCaseImpl" />
+
+
+	
+	<!--启用注解 -->
+	<context:annotation-config />
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+	<!-- 引入属性文件Hibernate属性配置 -->
+	<context:component-scan base-package="com.zlebank.zplatform.rmi.ServiceExporter"></context:component-scan>
+	
+	<!-- <bean id="TestCase" class="com.zlebank.zplatform.rmi.impl.TestCaseImpl" />
+>>>>>>> branch 'develop' of root@192.168.101.11:zplatform-remote
 	<bean name="/testcase"
 		class="org.springframework.remoting.caucho.HessianServiceExporter">
-		<!-- 需要导出的目标bean -->
+		需要导出的目标bean
 		<property name="service" ref="TestCase" />
-		<!-- Hessian服务的接口 -->
+		Hessian服务的接口
 		<property name="serviceInterface" value="com.zlebank.zplatform.rmi.ITestCase" />
+<<<<<<< HEAD
 	</bean>
 	
 	
+=======
+	</bean> -->
+	
+	<!--begin 会员模块 -->
+		<!-- 放入ServiceExporter -->
+		<!-- <bean name="/rmiMemberAccountService" class="com.zlebank.zplatform.rmi.ServiceExporter.IMemberAccountServiceExporter" /> -->
+		<!-- <bean id="RmiMemberAccountService" class="com.zlebank.zplatform.rmi.impl.IMemberAccountServiceImpl" /> -->
+		<!-- <bean name="/rmiMemberAccountService"
+			class="org.springframework.remoting.caucho.HessianServiceExporter">
+			需要导出的目标bean
+			<property name="service" ref="rmiMemberAccountService" />
+			Hessian服务的接口
+			<property name="serviceInterface" value="com.zlebank.zplatform.rmi.IMemberAccountService" />
+		</bean> -->
+	<!-- end 会员模块 -->
+
 	<bean
 		class="com.zlebank.zplatform.hessian.api.HessianServerScannerConfigurer">
 		<property name="basePackage" value="com.zlebank.zplatform.rmi"></property>
