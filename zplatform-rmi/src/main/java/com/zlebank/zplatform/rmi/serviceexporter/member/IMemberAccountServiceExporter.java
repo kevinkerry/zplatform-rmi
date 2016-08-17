@@ -15,7 +15,7 @@ import org.springframework.remoting.caucho.HessianServiceExporter;
 import org.springframework.stereotype.Repository;
 
 import com.zlebank.zplatform.rmi.impl.member.IMemberAccountServiceImpl;
-import com.zlebank.zplatform.rmi.member.IMemberAccountService;
+import com.zlebank.zplatform.rmi.interfaces.member.IMemberAccountService;
 
 /**
  * 会员账户

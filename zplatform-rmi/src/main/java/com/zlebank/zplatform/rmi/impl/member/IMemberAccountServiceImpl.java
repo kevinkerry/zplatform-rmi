@@ -23,7 +23,7 @@ import com.zlebank.zplatform.member.bean.enums.MemberType;
 import com.zlebank.zplatform.member.exception.DataCheckFailedException;
 import com.zlebank.zplatform.member.exception.GetAccountFailedException;
 import com.zlebank.zplatform.member.service.MemberAccountService;
-import com.zlebank.zplatform.rmi.member.IMemberAccountService;
+import com.zlebank.zplatform.rmi.interfaces.member.IMemberAccountService;
 
 /**
  * 
