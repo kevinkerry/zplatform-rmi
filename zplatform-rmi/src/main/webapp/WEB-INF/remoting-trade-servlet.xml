@@ -6,20 +6,13 @@
            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 
-	<import resource="remoting-trade-servlet.xml"/>
-	<bean id="TestCase" class="com.zlebank.zplatform.rmi.impl.TestCaseImpl" />
-	<bean name="/testcase"
+	
+	<bean id="Gateway" class="com.zlebank.zplatform.rmi.trade.impl.GateWayServiceImpl" />
+	<bean name="/gateway"
 		class="org.springframework.remoting.caucho.HessianServiceExporter">
 		<!-- 需要导出的目标bean -->
-		<property name="service" ref="TestCase" />
+		<property name="service" ref="Gateway" />
 		<!-- Hessian服务的接口 -->
-		<property name="serviceInterface" value="com.zlebank.zplatform.rmi.ITestCase" />
-	</bean>
-	
-	
-	<bean
-		class="com.zlebank.zplatform.hessian.api.HessianServerScannerConfigurer">
-		<property name="basePackage" value="com.zlebank.zplatform.rmi"></property>
-		<property name="annotationClass" value="com.zlebank.zplatform.hessian.core.Hessian"></property>
+		<property name="serviceInterface" value="com.zlebank.zplatform.rmi.trade.IGateWayService" />
 	</bean>
 </beans>

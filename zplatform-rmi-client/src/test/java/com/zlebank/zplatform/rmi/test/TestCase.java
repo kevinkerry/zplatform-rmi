@@ -16,6 +16,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.alibaba.fastjson.JSON;
+import com.zlebank.zplatform.rmi.trade.IGateWayService;
+
 /**
 **
 * Class Description
@@ -28,14 +31,16 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @RunWith(SpringJUnit4ClassRunner.class)  
 @ContextConfiguration("/remoting-client.xml")  
 public class TestCase{
-	@Autowired
-	private IHello hello;
 	
+	
+	@Autowired
+	private IGateWayService gateWayService;
 	@Autowired
 	private ITestCase testCase;
 	
 	@Test
 	public void test(){
+		System.out.println(JSON.toJSONString(gateWayService.getOrderinfoByTN("160815001400055419")));
 		System.out.println(testCase.test("1"));
 	}
 }
