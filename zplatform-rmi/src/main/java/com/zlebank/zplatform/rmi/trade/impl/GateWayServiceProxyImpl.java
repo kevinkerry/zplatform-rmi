@@ -18,7 +18,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 import com.caucho.hessian.server.HessianServlet;
-import com.zlebank.zplatform.rmi.trade.IGateWayServiceProxy;
+import com.zlebank.zplatform.rmi.trade.GateWayServiceProxy;
 import com.zlebank.zplatform.trade.bean.ResultBean;
 import com.zlebank.zplatform.trade.bean.gateway.OrderBean;
 import com.zlebank.zplatform.trade.bean.wap.WapCardBean;
@@ -35,7 +35,7 @@ import com.zlebank.zplatform.trade.service.IGateWayService;
  * @since 
  */
 @Repository("gateWayServiceProxy")
-public class GateWayServiceProxyImpl extends HessianServlet implements IGateWayServiceProxy{
+public class GateWayServiceProxyImpl extends HessianServlet implements GateWayServiceProxy{
 	
 	/**
 	 * serialVersionUID
@@ -198,6 +198,23 @@ public class GateWayServiceProxyImpl extends HessianServlet implements IGateWayS
 	public ResultBean generateAsyncRespMessage(String txnseqno) {
 		// TODO Auto-generated method stub
 		return gateWayService.generateAsyncRespMessage(txnseqno);
+	}
+
+	/**
+	 *
+	 * @param json
+	 * @return
+	 */
+	@Override
+	public String withdraw(String json) {
+		// TODO Auto-generated method stub
+		try {
+			return gateWayService.withdraw(json);
+		} catch (TradeException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 }

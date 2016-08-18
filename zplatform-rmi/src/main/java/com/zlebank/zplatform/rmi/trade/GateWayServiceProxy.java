@@ -30,7 +30,7 @@ import com.zlebank.zplatform.trade.model.TxnsOrderinfoModel;
  * @since 
  */
 @Hessian(context = Context.API_V2, uri = "/remoting/gateWayServiceProxy")
-public interface IGateWayServiceProxy {
+public interface GateWayServiceProxy {
 
 	 /**
      * 发送短信验证码
@@ -112,4 +112,12 @@ public interface IGateWayServiceProxy {
      * @return
      */
     public ResultBean generateAsyncRespMessage(String txnseqno);
+    
+    /**
+     * 提现
+     * @param json
+     * @return
+     * @throws TradeException
+     */
+    public String withdraw(String json);
 }
