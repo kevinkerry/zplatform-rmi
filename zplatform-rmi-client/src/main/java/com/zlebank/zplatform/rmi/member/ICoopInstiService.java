@@ -7,7 +7,6 @@ import com.zlebank.zplatform.hessian.core.Hessian;
 import com.zlebank.zplatform.member.bean.CoopInsti;
 import com.zlebank.zplatform.member.bean.CoopInstiMK;
 import com.zlebank.zplatform.member.bean.enums.TerminalAccessType;
-import com.zlebank.zplatform.member.exception.AbstractCoopInstiException;
 /**
  * 
  * cooperative institution service
@@ -35,7 +34,7 @@ public interface ICoopInstiService {
      * @throws AbstractCoopInstiException if instiName exist,or generate cooperative institution mk error,or open insti account error
      */
     public String createCoopInsti(String instiName, long userId)
-            throws AbstractCoopInstiException;
+            throws Exception;
    
     /**
      * get all cooperative institution 

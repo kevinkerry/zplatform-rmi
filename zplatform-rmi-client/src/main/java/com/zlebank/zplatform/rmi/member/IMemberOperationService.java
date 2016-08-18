@@ -14,11 +14,6 @@ import com.zlebank.zplatform.hessian.core.Context;
 import com.zlebank.zplatform.hessian.core.Hessian;
 import com.zlebank.zplatform.member.bean.MemberBean;
 import com.zlebank.zplatform.member.bean.enums.MemberType;
-import com.zlebank.zplatform.member.exception.CreateBusiAcctFailedException;
-import com.zlebank.zplatform.member.exception.CreateMemberFailedException;
-import com.zlebank.zplatform.member.exception.DataCheckFailedException;
-import com.zlebank.zplatform.member.exception.InvalidMemberDataException;
-import com.zlebank.zplatform.member.exception.LoginFailedException;
 
 /**
  * 会员注册
@@ -39,7 +34,7 @@ public interface IMemberOperationService {
      * @throws CreateMemberFailedException 
      * @throws CreateBusiAcctFailedException 
      */
-    public String registMember(MemberType memberType, MemberBean member) throws InvalidMemberDataException, CreateMemberFailedException, CreateBusiAcctFailedException;
+    public String registMember(MemberType memberType, MemberBean member) throws Exception;
 
     /**
      * 会员登陆
@@ -49,7 +44,7 @@ public interface IMemberOperationService {
      * @throws DataCheckFailedException 
      * @throws LoginFailedException 
      */
-    public String login(MemberType memberType, MemberBean member) throws DataCheckFailedException, LoginFailedException;
+    public String login(MemberType memberType, MemberBean member) throws Exception;
 
     /**
      * 验证支付密码 (属性必填 : [phone或loginName]/paypwd/instiCode )
@@ -59,7 +54,7 @@ public interface IMemberOperationService {
      * @throws DataCheckFailedException
      */
     boolean verifyPayPwd(MemberType memberType, MemberBean member)
-            throws DataCheckFailedException;
+            throws Exception;
 
     /**
      * 重置登陆密码
@@ -72,7 +67,7 @@ public interface IMemberOperationService {
      */
     boolean resetLoginPwd(MemberType memberType,
             MemberBean member,
-            String newPwd, boolean isCheckOldPassword) throws DataCheckFailedException;
+            String newPwd, boolean isCheckOldPassword) throws Exception;
 
     /**
      * 重置支付密码
@@ -83,5 +78,5 @@ public interface IMemberOperationService {
      * @return
      * @throws DataCheckFailedException
      */
-    boolean resetPayPwd(MemberType memberType, MemberBean member, String newPayPwd, boolean isCheckOldPassword) throws DataCheckFailedException;
+    boolean resetPayPwd(MemberType memberType, MemberBean member, String newPayPwd, boolean isCheckOldPassword) throws Exception;
 }

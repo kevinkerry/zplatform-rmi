@@ -12,8 +12,6 @@ package com.zlebank.zplatform.rmi.member;
 
 import com.zlebank.zplatform.hessian.core.Context;
 import com.zlebank.zplatform.hessian.core.Hessian;
-import com.zlebank.zplatform.member.exception.MemberBussinessException;
-import com.zlebank.zplatform.member.exception.PrimaykeyGeneratedException;
 
 /**
  * Sequence id generator for business actors.
@@ -33,7 +31,7 @@ public interface IPrimayKeyService {
      * @throws MemberBussinessException 
      */
     @Deprecated
-    public String getNexId(String paraType) throws MemberBussinessException;
+    public String getNexId(String paraType) throws Exception;
     
    /**
     * Get id by paraType and seqName. Return a number string had 15 byte format like this:(ActorType[one byte]+[15-n-1 byte]zero string+sequence[n byte].
@@ -45,6 +43,6 @@ public interface IPrimayKeyService {
     * @return a 15 byte string of sequence value
     * @throws PrimaykeyGeneratedException if generate fail
     */
-    public String getNexId(String paraType,String seqName) throws PrimaykeyGeneratedException ;
+    public String getNexId(String paraType,String seqName) throws Exception ;
 
 }

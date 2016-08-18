@@ -10,12 +10,10 @@
  */
 package com.zlebank.zplatform.rmi.member;
 
-import com.zlebank.zplatform.acc.exception.AbstractBusiAcctException;
 import com.zlebank.zplatform.hessian.core.Context;
 import com.zlebank.zplatform.hessian.core.Hessian;
 import com.zlebank.zplatform.member.bean.Person;
 import com.zlebank.zplatform.member.bean.PersonManager;
-import com.zlebank.zplatform.member.exception.MemberBussinessException;
 import com.zlebank.zplatform.member.pojo.PojoPersonDeta;
 
 
@@ -34,7 +32,7 @@ public interface IPersonService {
      * @param pers
      * @return busiCode
      */
-    public String save(Person pers,long userId)throws AbstractBusiAcctException, MemberBussinessException;
+    public String save(Person pers,long userId)throws Exception;
 
     /**
      * 通过手机号查询会员信息

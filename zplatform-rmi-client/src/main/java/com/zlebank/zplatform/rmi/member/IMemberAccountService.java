@@ -18,8 +18,6 @@ import com.zlebank.zplatform.member.bean.MemberAccountBean;
 import com.zlebank.zplatform.member.bean.MemberBalanceDetailBean;
 import com.zlebank.zplatform.member.bean.MemberBean;
 import com.zlebank.zplatform.member.bean.enums.MemberType;
-import com.zlebank.zplatform.member.exception.DataCheckFailedException;
-import com.zlebank.zplatform.member.exception.GetAccountFailedException;
 
 /**
  * 会员账户相关服务
@@ -39,7 +37,7 @@ public interface IMemberAccountService {
      * @throws DataCheckFailedException 
      * @throws GetAccountFailedException 
      */
-    public MemberAccountBean queryBalance (MemberType memberType, MemberBean member, Usage usage) throws DataCheckFailedException, GetAccountFailedException ;
+    public MemberAccountBean queryBalance (MemberType memberType, MemberBean member, Usage usage) throws Exception ;
     /**
      * 查询收支明细
      * @param memberType
@@ -49,5 +47,5 @@ public interface IMemberAccountService {
      * @return
      * @throws GetAccountFailedException 
      */
-    public PagedResult<MemberBalanceDetailBean> queryBalanceDetail (MemberType memberType, MemberBean member, int page, int pageSize) throws GetAccountFailedException ;
+    public PagedResult<MemberBalanceDetailBean> queryBalanceDetail (MemberType memberType, MemberBean member, int page, int pageSize) throws Exception ;
 }
