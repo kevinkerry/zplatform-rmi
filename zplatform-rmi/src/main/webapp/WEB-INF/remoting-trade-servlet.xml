@@ -24,4 +24,58 @@
 		<!-- Hessian服务的接口 -->
 		<property name="serviceInterface" value="com.zlebank.zplatform.rmi.trade.CardBinServiceProxy" />
 	</bean> 
+	
+	<bean id="CashBank" class="com.zlebank.zplatform.rmi.trade.impl.CashBankServiceProxyImpl" />
+	<bean name="/cashBankServiceProxy"
+		class="org.springframework.remoting.caucho.HessianServiceExporter">
+		<!-- 需要导出的目标bean -->
+		<property name="service" ref="CashBank" />
+		<!-- Hessian服务的接口 -->
+		<property name="serviceInterface" value="com.zlebank.zplatform.rmi.trade.CashBankServiceProxy" />
+	</bean> 
+	
+	<bean id="TxnsLog" class="com.zlebank.zplatform.rmi.trade.impl.TxnsLogServiceProxyImpl" />
+	<bean name="/txnsLogServiceProxy"
+		class="org.springframework.remoting.caucho.HessianServiceExporter">
+		<!-- 需要导出的目标bean -->
+		<property name="service" ref="TxnsLog" />
+		<!-- Hessian服务的接口 -->
+		<property name="serviceInterface" value="com.zlebank.zplatform.rmi.trade.TxnsLogServiceProxy" />
+	</bean> 
+	
+	<bean id="configInfo" class="com.zlebank.zplatform.rmi.trade.impl.ConfigInfoServiceProxyImpl" />
+	<bean name="/configInfoServiceProxy"
+		class="org.springframework.remoting.caucho.HessianServiceExporter">
+		<!-- 需要导出的目标bean -->
+		<property name="service" ref="configInfo" />
+		<!-- Hessian服务的接口 -->
+		<property name="serviceInterface" value="com.zlebank.zplatform.rmi.trade.ConfigInfoServiceProxy" />
+	</bean> 
+	
+	<bean id="weChat" class="com.zlebank.zplatform.rmi.trade.impl.WeChatServiceProxyImpl" />
+	<bean name="/weChatServiceProxy"
+		class="org.springframework.remoting.caucho.HessianServiceExporter">
+		<!-- 需要导出的目标bean -->
+		<property name="service" ref="weChat" />
+		<!-- Hessian服务的接口 -->
+		<property name="serviceInterface" value="com.zlebank.zplatform.rmi.trade.WeChatServiceProxy" />
+	</bean> 
+	
+	<bean id="txnsNotifyTask" class="com.zlebank.zplatform.rmi.trade.impl.TxnsNotifyTaskServiceProxyImpl" />
+	<bean name="/txnsNotifyTaskServiceProxy"
+		class="org.springframework.remoting.caucho.HessianServiceExporter">
+		<!-- 需要导出的目标bean -->
+		<property name="service" ref="txnsNotifyTask" />
+		<!-- Hessian服务的接口 -->
+		<property name="serviceInterface" value="com.zlebank.zplatform.rmi.trade.TxnsNotifyTaskServiceProxy" />
+	</bean> 
+	
+	<bean id="weChatQR" class="com.zlebank.zplatform.rmi.trade.impl.WeChatQRServiceProxyImpl" />
+	<bean name="/weChatQRServiceProxy"
+		class="org.springframework.remoting.caucho.HessianServiceExporter">
+		<!-- 需要导出的目标bean -->
+		<property name="service" ref="weChatQR" />
+		<!-- Hessian服务的接口 -->
+		<property name="serviceInterface" value="com.zlebank.zplatform.rmi.trade.WeChatQRServiceProxy" />
+	</bean> 
 </beans>

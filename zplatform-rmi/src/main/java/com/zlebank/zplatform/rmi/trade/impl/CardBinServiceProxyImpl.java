@@ -14,8 +14,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.caucho.hessian.server.HessianServlet;
-import com.zlebank.zplatform.commons.bean.CardBin;
 import com.zlebank.zplatform.rmi.trade.CardBinServiceProxy;
+import com.zlebank.zplatform.trade.bean.CardBinBean;
 import com.zlebank.zplatform.trade.service.CardBinService;
 
 /**
@@ -26,7 +26,7 @@ import com.zlebank.zplatform.trade.service.CardBinService;
  * @date 2016年8月17日 下午3:39:45
  * @since 
  */
-@Repository("cardBinServiceProxy")
+@Repository
 public class CardBinServiceProxyImpl extends HessianServlet implements CardBinServiceProxy{
 
 	/**
@@ -41,8 +41,11 @@ public class CardBinServiceProxyImpl extends HessianServlet implements CardBinSe
 	 * @return
 	 */
 	@Override
-	public CardBin getCard(String cardNo) {
+	public CardBinBean getCard(String cardNo) {
 		// TODO Auto-generated method stub
+		
+		
+		System.out.println("getCard:"+cardNo);
 		return cardBinService.getCard(cardNo);
 	}
 

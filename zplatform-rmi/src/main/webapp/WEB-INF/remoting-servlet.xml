@@ -16,36 +16,9 @@
 	<!--启用注解 -->
 	<context:annotation-config />
 	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
-	<!-- 引入属性文件Hibernate属性配置 -->
+	
 	<context:component-scan base-package="com.zlebank.zplatform.rmi.serviceexporter"></context:component-scan>
-	
-	<!-- <bean id="TestCase" class="com.zlebank.zplatform.rmi.impl.TestCaseImpl" />
->>>>>>> branch 'develop' of root@192.168.101.11:zplatform-remote
-	<bean name="/testcase"
-		class="org.springframework.remoting.caucho.HessianServiceExporter">
-		需要导出的目标bean
-		<property name="service" ref="TestCase" />
-		Hessian服务的接口
-		<property name="serviceInterface" value="com.zlebank.zplatform.rmi.ITestCase" />
-<<<<<<< HEAD
-	</bean>
-	
-	
-=======
-	</bean> -->
-	
-	<!--begin 会员模块 -->
-		<!-- 放入ServiceExporter -->
-		<!-- <bean name="/rmiMemberAccountService" class="com.zlebank.zplatform.rmi.ServiceExporter.IMemberAccountServiceExporter" /> -->
-		<!-- <bean id="RmiMemberAccountService" class="com.zlebank.zplatform.rmi.impl.IMemberAccountServiceImpl" /> -->
-		<!-- <bean name="/rmiMemberAccountService"
-			class="org.springframework.remoting.caucho.HessianServiceExporter">
-			需要导出的目标bean
-			<property name="service" ref="rmiMemberAccountService" />
-			Hessian服务的接口
-			<property name="serviceInterface" value="com.zlebank.zplatform.rmi.IMemberAccountService" />
-		</bean> -->
-	<!-- end 会员模块 -->
+<!-- 引入属性文件Hibernate属性配置 -->
 
 
 	

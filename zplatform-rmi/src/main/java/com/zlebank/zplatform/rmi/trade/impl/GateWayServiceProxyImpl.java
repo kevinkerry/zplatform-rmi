@@ -34,7 +34,7 @@ import com.zlebank.zplatform.trade.service.IGateWayService;
  * @date 2016年8月16日 下午4:36:07
  * @since 
  */
-@Repository("gateWayServiceProxy")
+@Repository
 public class GateWayServiceProxyImpl extends HessianServlet implements GateWayServiceProxy{
 	
 	/**

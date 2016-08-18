@@ -10,9 +10,9 @@
  */
 package com.zlebank.zplatform.rmi.trade;
 
+import com.zlebank.zplatform.commons.bean.CardBin;
 import com.zlebank.zplatform.hessian.core.Context;
 import com.zlebank.zplatform.hessian.core.Hessian;
-import com.zlebank.zplatform.trade.bean.CardBinBean;
 
 /**
  * Class Description
@@ -31,5 +31,5 @@ public interface CardBinServiceProxy {
 	 * @param cardNo
 	 * @return
 	 */
-	public CardBinBean getCard(String cardNo);
+	public CardBin getCard(String cardNo);
 }

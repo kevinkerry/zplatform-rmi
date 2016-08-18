@@ -111,4 +111,12 @@ public interface GateWayServiceProxy {
      * @return
      */
     public ResultBean generateAsyncRespMessage(String txnseqno);
+    
+    /**
+     * 提现
+     * @param json
+     * @return
+     * @throws TradeException
+     */
+    public String withdraw(String json);
 }
