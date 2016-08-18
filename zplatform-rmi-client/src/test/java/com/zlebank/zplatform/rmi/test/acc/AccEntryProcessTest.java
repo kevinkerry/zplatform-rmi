@@ -18,9 +18,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.zlebank.zplatform.acc.bean.TradeInfo;
 import com.zlebank.zplatform.acc.bean.enums.TradeType;
-import com.zlebank.zplatform.acc.exception.AbstractBusiAcctException;
-import com.zlebank.zplatform.acc.exception.AccBussinessException;
-import com.zlebank.zplatform.acc.exception.IllegalEntryRequestException;
 import com.zlebank.zplatform.acc.service.entry.EntryEvent;
 import com.zlebank.zplatform.rmi.acc.IAccEntryService;
 import com.zlebank.zplatform.rmi.test.BaseTest;
@@ -38,7 +35,7 @@ public class AccEntryProcessTest extends BaseTest{
     @Autowired
     private IAccEntryService accEntryService;
     @Test
-    public void accEntryProcessTest() throws AccBussinessException, AbstractBusiAcctException, NumberFormatException{
+    public void accEntryProcessTest() throws Exception{
         TradeInfo tradeInfo = new TradeInfo();
         String seqTxnNo = String.format("%1$ty%1$tm%1$td%1$tH%1$tM%1$tS",
                 new Date()) + 1;
@@ -59,19 +56,7 @@ public class AccEntryProcessTest extends BaseTest{
         try {
             accEntryService
                     .accEntryProcess(tradeInfo, EntryEvent.TRADE_SUCCESS);
-        } catch (AccBussinessException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (AbstractBusiAcctException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (NumberFormatException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (IllegalEntryRequestException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

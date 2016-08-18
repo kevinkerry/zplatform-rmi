@@ -2,10 +2,9 @@ package com.zlebank.zplatform.rmi.member;
 
 import java.util.List;
 
-import com.zlebank.zplatform.commons.dao.pojo.ProductModel;
 import com.zlebank.zplatform.hessian.core.Context;
 import com.zlebank.zplatform.hessian.core.Hessian;
-import com.zlebank.zplatform.member.exception.AbstractCoopInstiException;
+import com.zlebank.zplatform.member.pojo.ProductModel;
 
 @Hessian(context = Context.API_V2, uri = "/remoting/rmiCoopInstiProductService")
 public interface ICoopInstiProductService {
@@ -20,5 +19,5 @@ public interface ICoopInstiProductService {
 	 *             if cooperative institution not exist
 	 */
 	public List<ProductModel> getProducts(long coopInstiId)
-			throws AbstractCoopInstiException;
+			throws Exception;
 }

@@ -10,11 +10,9 @@
  */
 package com.zlebank.zplatform.rmi.member;
 
-import com.zlebank.zplatform.acc.exception.AbstractBusiAcctException;
 import com.zlebank.zplatform.hessian.core.Context;
 import com.zlebank.zplatform.hessian.core.Hessian;
 import com.zlebank.zplatform.member.bean.MerchantBean;
-import com.zlebank.zplatform.member.exception.MemberBussinessException;
 import com.zlebank.zplatform.member.pojo.PojoMerchDeta;
 
 /**
@@ -32,7 +30,7 @@ public interface IMerchService {
              * @param mb
              * @return
              */
-    public String createMinorMerchant(MerchantBean mb,Long userId) throws MemberBussinessException, AbstractBusiAcctException ;
+    public String createMinorMerchant(MerchantBean mb,Long userId) throws Exception ;
 
     /**
      * 根据父级ID得到父级商户

@@ -16,13 +16,11 @@ import com.zlebank.zplatform.acc.bean.AccEntry;
 import com.zlebank.zplatform.acc.bean.BusiAcct;
 import com.zlebank.zplatform.acc.bean.BusiAcctQuery;
 import com.zlebank.zplatform.acc.bean.QueryAccount;
-import com.zlebank.zplatform.acc.exception.AbstractBusiAcctException;
 import com.zlebank.zplatform.commons.bean.PagedResult;
 import com.zlebank.zplatform.hessian.core.Context;
 import com.zlebank.zplatform.hessian.core.Hessian;
 import com.zlebank.zplatform.member.bean.MemberQuery;
 import com.zlebank.zplatform.member.bean.enums.MemberType;
-import com.zlebank.zplatform.member.exception.MemberBussinessException;
 import com.zlebank.zplatform.member.pojo.PojoMember;
 
 /**
@@ -60,7 +58,7 @@ public interface IMemberService {
      */
     public PagedResult<AccEntry> getAccEntryByQuery(int page,
             int pageSize,
-            MemberQuery mQuery) throws MemberBussinessException;
+            MemberQuery mQuery) throws Exception;
     /**
      * 开通账户
      * 
@@ -69,7 +67,7 @@ public interface IMemberService {
      * @return
      */
     public List<BusiAcct> openBusiAcct(String name, String memberId, long userId)
-            throws AbstractBusiAcctException, MemberBussinessException;
+            throws Exception;
     /**
      * 通过 会员ID、状态得到会员
      * 

@@ -15,9 +15,6 @@ import com.zlebank.zplatform.hessian.core.Context;
 import com.zlebank.zplatform.hessian.core.Hessian;
 import com.zlebank.zplatform.member.bean.QuickpayCustBean;
 import com.zlebank.zplatform.member.bean.RealNameBean;
-import com.zlebank.zplatform.member.exception.DataCheckFailedException;
-import com.zlebank.zplatform.member.exception.UnbindBankFailedException;
-
 /**
  * 会员银行卡相关服务
  *
@@ -53,7 +50,7 @@ public interface IMemberBankCardService {
      * @throws DataCheckFailedException 
      * @throws UnbindBankFailedException 
      */
-    public void unbindQuickPayCust(QuickpayCustBean bean) throws DataCheckFailedException, UnbindBankFailedException;
+    public void unbindQuickPayCust(QuickpayCustBean bean) throws Exception;
     
     /**
      * 查询签约银行卡信息（会员）
