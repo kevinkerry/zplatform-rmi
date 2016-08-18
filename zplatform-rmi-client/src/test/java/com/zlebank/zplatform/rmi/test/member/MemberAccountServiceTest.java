@@ -36,7 +36,7 @@ public class MemberAccountServiceTest extends BaseTest {
     public void test(){
         try {
             MemberBean member=new MemberBean();
-            member.setMemberId("200000000000622");
+            member.setMemberId("200000000000626");
             MemberAccountBean result= memberAccountService.queryBalance(MemberType.INDIVIDUAL, member, Usage.BASICPAY);
             System.out.println(JSONObject.toJSONString(result));
         } catch (Exception e) {
