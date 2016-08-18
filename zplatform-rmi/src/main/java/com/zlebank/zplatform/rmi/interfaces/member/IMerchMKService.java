@@ -20,7 +20,6 @@ import com.zlebank.zplatform.member.bean.MerchMK;
  * @date 2015年9月17日 上午9:40:12
  * @since
  */
-
 public interface IMerchMKService {
     /**
      * 
@@ -45,4 +44,10 @@ public interface IMerchMKService {
      * @return
      */
     String sign(String memberId, String originData);
+    
+    /**
+     * 更新商户秘钥
+     * @param merchMK
+     */
+    public void updateMerchMK(MerchMK merchMK);
 }

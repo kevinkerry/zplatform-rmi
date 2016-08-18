@@ -68,4 +68,13 @@ public class IMerchMKServiceImpl extends HessianServlet implements IMerchMKServi
         return merchMkService.sign(memberId, originData);
     }
 
+    /**
+     *
+     * @param merchMK
+     */
+    @Override
+    public void updateMerchMK(MerchMK merchMK) {
+        merchMkService.updateMerchMK(merchMK);
+    }
+
 }
