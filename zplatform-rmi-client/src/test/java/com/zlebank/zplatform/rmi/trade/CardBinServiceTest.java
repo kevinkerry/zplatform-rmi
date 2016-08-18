@@ -17,8 +17,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.alibaba.fastjson.JSON;
-import com.zlebank.zplatform.commons.bean.CardBin;
-import com.zlebank.zplatform.trade.model.TxnsOrderinfoModel;
+import com.zlebank.zplatform.trade.bean.CardBinBean;
 
 /**
  * Class Description
@@ -39,7 +38,7 @@ public class CardBinServiceTest {
 	
 	@Test
 	public void test_get(){
-		CardBin card = cardBinServiceProxy.getCard("6225768749734008");
+		CardBinBean card = cardBinServiceProxy.getCard("6225768749734008");
 		System.out.println(JSON.toJSONString(card));
 		//TxnsOrderinfoModel orderinfoByTN = gateWayServiceProxy.getOrderinfoByTN("151114044300000503");
 		//System.out.println(JSON.toJSONString(orderinfoByTN));

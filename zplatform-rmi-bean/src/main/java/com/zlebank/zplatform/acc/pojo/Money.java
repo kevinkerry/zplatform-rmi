@@ -14,9 +14,6 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Currency;
 
-import javax.persistence.Embeddable;
-import javax.persistence.Transient;
-
 /**
  * Money class,it currency is "CNY",the default fraction digits is 0,means its
  * default unit is "fen".
@@ -26,7 +23,7 @@ import javax.persistence.Transient;
  * @date 2015年8月25日 下午12:15:05
  * @since
  */
-@Embeddable
+
 public class Money implements Comparable<Money>, Serializable {
 
     /**
@@ -52,7 +49,7 @@ public class Money implements Comparable<Money>, Serializable {
     public void setAmount(BigDecimal amount) {
         this.amount = amount;
     }
-    @Transient
+    
     public Currency getCurrency() {
         return currency;
     }

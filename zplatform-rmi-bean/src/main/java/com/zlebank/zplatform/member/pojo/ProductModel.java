@@ -12,13 +12,6 @@ package com.zlebank.zplatform.member.pojo;
 
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
 /**
  * Class Description
  *
@@ -27,9 +20,6 @@ import javax.persistence.TemporalType;
  * @date 2016年8月18日 上午11:30:25
  * @since 
  */
-
-@Entity
-@Table(name = "T_PRODUCT")
 public class ProductModel implements java.io.Serializable {
 
     // Fields
@@ -80,8 +70,7 @@ public class ProductModel implements java.io.Serializable {
     }
 
     // Property accessors
-    @Id
-    @Column(name = "PRDTVER", unique = true, nullable = false, length = 8)
+    
     public String getPrdtver() {
         return this.prdtver;
     }
@@ -90,7 +79,7 @@ public class ProductModel implements java.io.Serializable {
         this.prdtver = prdtver;
     }
 
-    @Column(name = "PRDTID", nullable = false, precision = 10, scale = 0)
+  
     public Long getPrdtid() {
         return this.prdtid;
     }
@@ -99,7 +88,7 @@ public class ProductModel implements java.io.Serializable {
         this.prdtid = prdtid;
     }
 
-    @Column(name = "PRDTNAME", nullable = false, length = 64)
+    
     public String getPrdtname() {
         return this.prdtname;
     }
@@ -108,7 +97,7 @@ public class ProductModel implements java.io.Serializable {
         this.prdtname = prdtname;
     }
 
-    @Column(name = "STATUS", length = 2)
+   
     public String getStatus() {
         return this.status;
     }
@@ -117,8 +106,7 @@ public class ProductModel implements java.io.Serializable {
         this.status = status;
     }
 
-    @Temporal(TemporalType.DATE)
-    @Column(name = "INTIME", nullable = false, length = 7)
+    
     public Date getIntime() {
         return this.intime;
     }
@@ -127,7 +115,7 @@ public class ProductModel implements java.io.Serializable {
         this.intime = intime;
     }
 
-    @Column(name = "INUSER", precision = 10, scale = 0)
+    
     public Long getInuser() {
         return this.inuser;
     }
@@ -135,9 +123,6 @@ public class ProductModel implements java.io.Serializable {
     public void setInuser(Long inuser) {
         this.inuser = inuser;
     }
-
-    @Temporal(TemporalType.DATE)
-    @Column(name = "UPTIME", length = 7)
     public Date getUptime() {
         return this.uptime;
     }
@@ -146,7 +131,7 @@ public class ProductModel implements java.io.Serializable {
         this.uptime = uptime;
     }
 
-    @Column(name = "UPUSER", precision = 10, scale = 0)
+   
     public Long getUpuser() {
         return this.upuser;
     }
@@ -155,7 +140,7 @@ public class ProductModel implements java.io.Serializable {
         this.upuser = upuser;
     }
 
-    @Column(name = "NOTES", length = 256)
+  
     public String getNotes() {
         return this.notes;
     }
@@ -163,8 +148,7 @@ public class ProductModel implements java.io.Serializable {
     public void setNotes(String notes) {
         this.notes = notes;
     }
-
-    @Column(name = "REMARKS", length = 256)
+   
     public String getRemarks() {
         return this.remarks;
     }

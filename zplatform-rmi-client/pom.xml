@@ -12,21 +12,7 @@
 	<url>http://maven.apache.org</url>
 	<dependencies>
 		
-		<dependency>
-		    <groupId>org.hibernate</groupId>
-		    <artifactId>hibernate-commons-annotations</artifactId>
-		    <version>3.2.0.Final</version>
-		</dependency>
-		<dependency>
-		    <groupId>org.hibernate</groupId>
-		    <artifactId>hibernate-core</artifactId>
-		    <version>4.2.4.Final</version>
-		</dependency>
-		<dependency>
-		    <groupId>javax.persistence</groupId>
-		    <artifactId>persistence-api</artifactId>
-		    <version>1.0.2</version>
-		</dependency>
+		
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
@@ -58,7 +44,12 @@
 			<artifactId>commons-collections4</artifactId>
 			<version>4.0</version>
 		</dependency>
-
+		<dependency>    
+		    <groupId>net.sf.json-lib</groupId>    
+		    <artifactId>json-lib</artifactId>    
+		    <version>2.4</version>    
+		    <classifier>jdk15</classifier>    
+		</dependency> 
 
 		<dependency>
 			<groupId>com.zlebank.zplatform</groupId>
@@ -66,7 +57,5 @@
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
-	<build>
-		<finalName>zplatform-rmi</finalName>
-	</build>
+	
 </project>
