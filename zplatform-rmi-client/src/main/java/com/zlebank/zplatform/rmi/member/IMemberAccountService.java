@@ -37,7 +37,7 @@ public interface IMemberAccountService {
      * @throws DataCheckFailedException 
      * @throws GetAccountFailedException 
      */
-    public MemberAccountBean queryBalance (MemberType memberType, MemberBean member, Usage usage) throws Exception ;
+    public MemberAccountBean queryBalance (MemberType memberType, MemberBean member, Usage usage) throws Exception;
     /**
      * 查询收支明细
      * @param memberType
