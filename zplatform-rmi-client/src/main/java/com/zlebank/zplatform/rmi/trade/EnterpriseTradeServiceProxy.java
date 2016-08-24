@@ -14,6 +14,7 @@ import com.zlebank.zplatform.hessian.core.Context;
 import com.zlebank.zplatform.hessian.core.Hessian;
 import com.zlebank.zplatform.member.bean.EnterpriseRealNameBean;
 import com.zlebank.zplatform.member.bean.EnterpriseRealNameConfirmBean;
+import com.zlebank.zplatform.trade.bean.OffLineChargeBean;
 
 /**
  * Class Description
@@ -40,5 +41,10 @@ public interface EnterpriseTradeServiceProxy {
 	 */
 	public void realNameConfirm(EnterpriseRealNameConfirmBean enterpriseRealNameConfirmBean) throws Exception;
 	
-	
+	/**
+	 * 线下充值订单
+	 * @param offLineChargeBean
+	 * @return
+	 */
+	public String offLineCharge(OffLineChargeBean offLineChargeBean);
 }

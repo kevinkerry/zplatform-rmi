@@ -10,6 +10,9 @@
  */
 package com.zlebank.zplatform.rmi.trade;
 
+import java.util.Date;
+
+import org.apache.commons.lang.time.DateUtils;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +20,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.zlebank.zplatform.member.bean.EnterpriseRealNameBean;
 import com.zlebank.zplatform.member.bean.EnterpriseRealNameConfirmBean;
 import com.zlebank.zplatform.rmi.test.BaseTest;
+import com.zlebank.zplatform.trade.bean.OffLineChargeBean;
 
 /**
  * Class Description
@@ -66,6 +70,7 @@ public class EnterpriseTradeServiceTest extends BaseTest{
 	}
 	
 	@Test
+	@Ignore
 	public void test_confirm(){
 		//160823000400055861
 		EnterpriseRealNameConfirmBean bean = new EnterpriseRealNameConfirmBean();
@@ -81,6 +86,23 @@ public class EnterpriseTradeServiceTest extends BaseTest{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	@Test
+	public void test_offlinecharge(){
+		OffLineChargeBean offLineChargeBean = new OffLineChargeBean();
+		offLineChargeBean.setMemberId("200000000000683");
+		offLineChargeBean.setBackURL("www.baidu.com");
+		offLineChargeBean.setBizType("000207");
+		offLineChargeBean.setChannelType("00");
+		offLineChargeBean.setChargeCode("123455");
+		offLineChargeBean.setCoopInsti("300000000000027");
+		offLineChargeBean.setOrderId("M"+new Date().getTime());
+		offLineChargeBean.setTxnAmt("10000");
+		offLineChargeBean.setTxnSubType("00");
+		offLineChargeBean.setTxnType("25");
+		String tn = enterpriseTradeServiceProxy.offLineCharge(offLineChargeBean);
+		System.out.println(tn);
 	}
 	
 }

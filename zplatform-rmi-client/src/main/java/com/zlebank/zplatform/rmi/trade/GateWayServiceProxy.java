@@ -119,4 +119,16 @@ public interface GateWayServiceProxy {
      * @throws TradeException
      */
     public String withdraw(String json);
+    /**
+     * 验证重复支付订单
+     * @param orderNo
+     * @param txntime
+     * @param amount
+     * @param merchId
+     * @param memberId
+     * @throws TradeException
+     */
+    public void verifyRepeatWebOrder(String orderNo, String txntime,
+			String amount, String merchId, String memberId)
+			throws Exception ;
 }

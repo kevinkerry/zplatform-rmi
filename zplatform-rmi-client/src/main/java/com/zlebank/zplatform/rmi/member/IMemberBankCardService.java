@@ -87,4 +87,15 @@ public interface IMemberBankCardService {
      */
     public QuickpayCustBean getCardList(String cardNo, String accName,String phone, String cerId, String memberId);
     
+    /**
+     * 通过会员ID，卡号，身份证号，账户名，手机号，设备号得到绑卡对象
+     * @param memberId
+     * @param cardNo
+     * @param idnum
+     * @param accname
+     * @param phone
+     * @return
+     */
+    public QuickpayCustBean getCardList(String cardNo, String accName,String phone, String cerId, String memberId,String devId);
+    
 }
