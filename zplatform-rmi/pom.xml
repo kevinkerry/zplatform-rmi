@@ -41,10 +41,10 @@
 			<version>${springframework.version}</version>
 		</dependency>
 		<dependency>
-				<groupId>com.zlebank.zplatform</groupId>
-				<artifactId>zplatform-member</artifactId>
-				<version>1.6.0-SNAPSHOT</version>
-			</dependency>
+			<groupId>com.zlebank.zplatform</groupId>
+			<artifactId>zplatform-member</artifactId>
+			<version>1.6.0-SNAPSHOT</version>
+		</dependency>
 		<dependency>
 			<groupId>com.zlebank.zplatform</groupId>
 			<artifactId>zplatform-trade-core</artifactId>

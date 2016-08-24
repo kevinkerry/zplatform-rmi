@@ -87,4 +87,40 @@
 		<!-- Hessian服务的接口 -->
 		<property name="serviceInterface" value="com.zlebank.zplatform.rmi.trade.EnterpriseTradeServiceProxy" />
 	</bean> 
+	
+	<bean id="merchWhiteList" class="com.zlebank.zplatform.rmi.trade.impl.MerchWhiteListServiceProxyImpl" />
+	<bean name="/merchWhiteListServiceProxy"
+		class="org.springframework.remoting.caucho.HessianServiceExporter">
+		<!-- 需要导出的目标bean -->
+		<property name="service" ref="merchWhiteList" />
+		<!-- Hessian服务的接口 -->
+		<property name="serviceInterface" value="com.zlebank.zplatform.rmi.trade.MerchWhiteListServiceProxy" />
+	</bean>
+	
+	<bean id="prodCase" class="com.zlebank.zplatform.rmi.trade.impl.ProdCaseServiceProxyImpl" />
+	<bean name="/prodCaseServiceProxy"
+		class="org.springframework.remoting.caucho.HessianServiceExporter">
+		<!-- 需要导出的目标bean -->
+		<property name="service" ref="prodCase" />
+		<!-- Hessian服务的接口 -->
+		<property name="serviceInterface" value="com.zlebank.zplatform.rmi.trade.ProdCaseServiceProxy" />
+	</bean>
+	
+	<bean id="tradeQuery" class="com.zlebank.zplatform.rmi.trade.impl.TradeQueryServiceProxyImpl" />
+	<bean name="/tradeQueryServiceProxy"
+		class="org.springframework.remoting.caucho.HessianServiceExporter">
+		<!-- 需要导出的目标bean -->
+		<property name="service" ref="tradeQuery" />
+		<!-- Hessian服务的接口 -->
+		<property name="serviceInterface" value="com.zlebank.zplatform.rmi.trade.TradeQueryServiceProxy" />
+	</bean>
+	
+	<bean id="appUpdate" class="com.zlebank.zplatform.rmi.trade.impl.AppUpdateServiceProxyImpl" />
+	<bean name="/appUpdateServiceProxy"
+		class="org.springframework.remoting.caucho.HessianServiceExporter">
+		<!-- 需要导出的目标bean -->
+		<property name="service" ref="appUpdate" />
+		<!-- Hessian服务的接口 -->
+		<property name="serviceInterface" value="com.zlebank.zplatform.rmi.trade.AppUpdateServiceProxy" />
+	</bean>
 </beans>

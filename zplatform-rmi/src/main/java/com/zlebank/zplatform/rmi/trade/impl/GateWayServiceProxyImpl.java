@@ -14,7 +14,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 import com.caucho.hessian.server.HessianServlet;
@@ -23,8 +22,10 @@ import com.zlebank.zplatform.trade.bean.ResultBean;
 import com.zlebank.zplatform.trade.bean.gateway.OrderBean;
 import com.zlebank.zplatform.trade.bean.wap.WapCardBean;
 import com.zlebank.zplatform.trade.exception.TradeException;
+import com.zlebank.zplatform.trade.model.TxnsLogModel;
 import com.zlebank.zplatform.trade.model.TxnsOrderinfoModel;
 import com.zlebank.zplatform.trade.service.IGateWayService;
+import com.zlebank.zplatform.trade.service.ITxnsLogService;
 
 /**
  * Class Description
@@ -43,7 +44,8 @@ public class GateWayServiceProxyImpl extends HessianServlet implements GateWaySe
 	private static final long serialVersionUID = -3471789345770777318L;
 	@Autowired
 	private IGateWayService gateWayService;
-
+@Autowired
+private ITxnsLogService txnsLogService;
 	/**
 	 *
 	 * @param json
@@ -215,6 +217,54 @@ public class GateWayServiceProxyImpl extends HessianServlet implements GateWaySe
 			e.printStackTrace();
 		}
 		return null;
+	}
+
+	/**
+	 *
+	 * @param orderNo
+	 * @param txntime
+	 * @param amount
+	 * @param merchId
+	 * @param memberId
+	 * @throws TradeException
+	 */
+	@Override
+	public void verifyRepeatWebOrder(String orderNo, String txntime,
+			String amount, String merchId, String memberId)
+			throws TradeException {
+		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub
+				TxnsOrderinfoModel orderInfo = gateWayService.getOrderinfoByOrderNoAndMerch(
+						orderNo, merchId);
+				if (orderInfo != null) {
+					TxnsLogModel txnsLog = txnsLogService
+							.getTxnsLogByTxnseqno(orderInfo.getRelatetradetxn());
+					if ("00".equals(orderInfo.getStatus())) {// 交易成功订单不可二次支付
+						throw new TradeException("T004");
+					}
+					if ("02".equals(orderInfo.getStatus())) {
+						throw new TradeException("T009");
+					}
+					if ("04".equals(orderInfo.getStatus())) {
+						throw new TradeException("T012");
+					}
+					if (!amount.equals(orderInfo.getOrderamt().toString())) {
+						throw new TradeException("T014");
+					}
+					if (!txntime.equals(orderInfo.getOrdercommitime())) {// 订单存在，提交日期也一致，二次支付订单,
+						throw new TradeException("T013");
+					}
+					if (!merchId.equals(orderInfo.getFirmemberno())) {
+						throw new TradeException("T015");
+					}
+					if (!"999999999999999".equals(txnsLog.getAccmemberid())) {// 非匿名支付
+						if (!txnsLog.getAccmemberid().equals(memberId)) {
+							throw new TradeException("T036");
+						}
+					}
+
+				}
+
 	}
 
 }

@@ -19,6 +19,7 @@ import com.zlebank.zplatform.member.bean.EnterpriseRealNameConfirmBean;
 import com.zlebank.zplatform.member.exception.DataCheckFailedException;
 import com.zlebank.zplatform.member.exception.InvalidMemberDataException;
 import com.zlebank.zplatform.rmi.trade.EnterpriseTradeServiceProxy;
+import com.zlebank.zplatform.trade.bean.OffLineChargeBean;
 import com.zlebank.zplatform.trade.exception.TradeException;
 import com.zlebank.zplatform.trade.service.EnterpriseTradeService;
 
@@ -72,5 +73,15 @@ public class EnterpriseTradeServiceProxyImpl extends HessianServlet implements E
 			e.printStackTrace();
 			throw new Exception(e.getMessage());
 		}
+	}
+
+	/**
+	 *
+	 * @param offLineChargeBean
+	 * @return
+	 */
+	@Override
+	public String offLineCharge(OffLineChargeBean offLineChargeBean) {
+		return enterpriseTradeService.offLineCharge(offLineChargeBean);
 	}
 }
