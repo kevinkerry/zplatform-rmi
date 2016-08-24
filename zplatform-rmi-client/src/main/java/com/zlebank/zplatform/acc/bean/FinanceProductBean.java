@@ -36,7 +36,9 @@ public class FinanceProductBean implements Serializable{
      */
     private String productCode;
     
-    
+    private String fundManager;
+    /**融资人*/
+    private String financier;
 
     /**
      * @param productName
@@ -76,6 +78,30 @@ public class FinanceProductBean implements Serializable{
      */
     public void setProductCode(String productCode) {
         this.productCode = productCode;
+    }
+    /**
+     * @return the fundManager
+     */
+    public String getFundManager() {
+        return fundManager;
+    }
+    /**
+     * @param fundManager the fundManager to set
+     */
+    public void setFundManager(String fundManager) {
+        this.fundManager = fundManager;
+    }
+    /**
+     * @return the financier
+     */
+    public String getFinancier() {
+        return financier;
+    }
+    /**
+     * @param financier the financier to set
+     */
+    public void setFinancier(String financier) {
+        this.financier = financier;
     }
        
 }
