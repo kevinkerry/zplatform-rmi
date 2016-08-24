@@ -20,7 +20,14 @@
 	<context:component-scan base-package="com.zlebank.zplatform.rmi.serviceexporter"></context:component-scan>
 <!-- 引入属性文件Hibernate属性配置 -->
 
-
+	<bean id="region" class="com.zlebank.zplatform.rmi.commons.impl.RegionServiceProxyImpl" />
+	<bean name="/regionServiceProxy"
+		class="org.springframework.remoting.caucho.HessianServiceExporter">
+		<!-- 需要导出的目标bean -->
+		<property name="service" ref="region" />
+		<!-- Hessian服务的接口 -->
+		<property name="serviceInterface" value="com.zlebank.zplatform.rmi.commons.RegionServiceProxy" />
+	</bean> 
 	
 
 	<bean class="com.zlebank.zplatform.hessian.api.HessianServerScannerConfigurer">

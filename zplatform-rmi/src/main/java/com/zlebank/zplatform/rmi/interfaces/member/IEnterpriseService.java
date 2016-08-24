@@ -10,7 +10,12 @@
  */
 package com.zlebank.zplatform.rmi.interfaces.member;
 
+import com.zlebank.zplatform.member.bean.EnterpriseBankAccountBean;
 import com.zlebank.zplatform.member.bean.EnterpriseBean;
+import com.zlebank.zplatform.member.bean.EnterpriseRealNameBean;
+import com.zlebank.zplatform.member.bean.EnterpriseRealNameConfirmBean;
+import com.zlebank.zplatform.member.exception.CreateMemberFailedException;
+import com.zlebank.zplatform.member.exception.InvalidMemberDataException;
 
 /**
  * 
@@ -30,4 +35,29 @@ public interface IEnterpriseService {
      * @return
      */
    public  EnterpriseBean  getEnterpriseByMemberId(String memberId); 
+   
+   /**
+    * 企业注册申请
+    * @param enterpriseDeta
+    */
+   public void registerApply(EnterpriseBean enterpriseDeta) throws Exception;
+   
+   /**
+    * 企业实名认证申请
+    * @param enterpriseRealNameBean
+    * @throws Exception
+    */
+   public void realNameApply(EnterpriseRealNameBean enterpriseRealNameBean) throws Exception;
+   /**
+	 * 企业实名认证确认
+	 * @param enterpriseRealNameConfirmBean
+	 */
+	public void realnameConfirm(EnterpriseRealNameConfirmBean enterpriseRealNameConfirmBean)throws Exception;
+	
+	/**
+	 * 企业会员绑定银行账户
+	 * @param enterpriseBankAccountBean
+	 * @throws Exception
+	 */
+	public void bindingBankAccount(EnterpriseBankAccountBean enterpriseBankAccountBean)throws Exception;
 }

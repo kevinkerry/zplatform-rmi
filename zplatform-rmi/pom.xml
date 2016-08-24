@@ -8,7 +8,7 @@
 	</parent>
 	<artifactId>zplatform-remote-rmi</artifactId>
 	<packaging>war</packaging>
-	<name>zplatform-trade-gateway Maven Webapp</name>
+	<name>zplatform-remote-rmi</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
 		

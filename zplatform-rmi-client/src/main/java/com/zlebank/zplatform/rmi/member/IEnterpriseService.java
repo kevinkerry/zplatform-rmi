@@ -12,7 +12,9 @@ package com.zlebank.zplatform.rmi.member;
 
 import com.zlebank.zplatform.hessian.core.Context;
 import com.zlebank.zplatform.hessian.core.Hessian;
+import com.zlebank.zplatform.member.bean.EnterpriseBankAccountBean;
 import com.zlebank.zplatform.member.bean.EnterpriseBean;
+import com.zlebank.zplatform.member.bean.EnterpriseRealNameConfirmBean;
 
 /**
  * 
@@ -24,13 +26,30 @@ import com.zlebank.zplatform.member.bean.EnterpriseBean;
  * @since
  */
 @Hessian(context = Context.API_V2, uri = "/remoting/rmiEnterpriseService")
-public interface IEnterpriseService { 
+public interface IEnterpriseService {
 
-    
-    /**
-     * 根据memberId得到企业信息
-     * @param memberId
-     * @return
-     */
-   public  EnterpriseBean  getEnterpriseByMemberId(String memberId); 
+	/**
+	 * 根据memberId得到企业信息
+	 * 
+	 * @param memberId
+	 * @return
+	 */
+	public EnterpriseBean getEnterpriseByMemberId(String memberId);
+
+	/**
+	 * 企业注册申请
+	 * 
+	 * @param enterpriseDeta
+	 */
+	public void registerApply(EnterpriseBean enterpriseDeta) throws Exception;
+
+	
+	/**
+	 * 企业会员绑定银行账户
+	 * @param enterpriseBankAccountBean
+	 * @throws Exception
+	 */
+	public void bindingBankAccount(
+			EnterpriseBankAccountBean enterpriseBankAccountBean)
+			throws Exception;
 }

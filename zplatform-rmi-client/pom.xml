@@ -7,8 +7,8 @@
 		<version>1.0.0-SNAPSHOT</version>
 		<relativePath>../zplatform-rmi-deploy/pom.xml</relativePath>
 	</parent>
-	<artifactId>zplatform-remote-rmi</artifactId>
-	<name>zplatform-trade-gateway Maven Webapp</name>
+	<artifactId>zplatform-remote-client</artifactId>
+	<name>zplatform-remote-client</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
 		

@@ -40,14 +40,8 @@ public class CardBinServiceProxyImpl extends HessianServlet implements CardBinSe
 	 * @param cardNo
 	 * @return
 	 */
-	@Override
 	public CardBinBean getCard(String cardNo) {
 		// TODO Auto-generated method stub
-		
-		
-		System.out.println("getCard:"+cardNo);
 		return cardBinService.getCard(cardNo);
 	}
-
-	
 }

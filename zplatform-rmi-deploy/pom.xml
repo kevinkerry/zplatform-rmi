@@ -315,6 +315,8 @@
 	</build>
 	<modules>
 		<module>../zplatform-rmi</module>
+		<module>../zplatform-rmi-bean</module>
+		<module>../zplatform-rmi-client</module>
 	</modules>
 </project>
 

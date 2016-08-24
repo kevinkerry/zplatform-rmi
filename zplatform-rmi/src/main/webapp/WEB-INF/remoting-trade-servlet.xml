@@ -78,4 +78,13 @@
 		<!-- Hessian服务的接口 -->
 		<property name="serviceInterface" value="com.zlebank.zplatform.rmi.trade.WeChatQRServiceProxy" />
 	</bean> 
+	
+	<bean id="enterpriseTrade" class="com.zlebank.zplatform.rmi.trade.impl.EnterpriseTradeServiceProxyImpl" />
+	<bean name="/enterpriseTradeServiceProxy"
+		class="org.springframework.remoting.caucho.HessianServiceExporter">
+		<!-- 需要导出的目标bean -->
+		<property name="service" ref="enterpriseTrade" />
+		<!-- Hessian服务的接口 -->
+		<property name="serviceInterface" value="com.zlebank.zplatform.rmi.trade.EnterpriseTradeServiceProxy" />
+	</bean> 
 </beans>

@@ -8,7 +8,7 @@
 		<relativePath>../zplatform-rmi-deploy/pom.xml</relativePath>
 	</parent>
 	<artifactId>zplatform-remote-bean</artifactId>
-	<name>zplatform-trade-gateway Maven Webapp</name>
+	<name>zplatform-remote-bean</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
 		<dependency>
