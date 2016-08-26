@@ -14,8 +14,6 @@ import com.zlebank.zplatform.member.bean.EnterpriseBankAccountBean;
 import com.zlebank.zplatform.member.bean.EnterpriseBean;
 import com.zlebank.zplatform.member.bean.EnterpriseRealNameBean;
 import com.zlebank.zplatform.member.bean.EnterpriseRealNameConfirmBean;
-import com.zlebank.zplatform.member.exception.CreateMemberFailedException;
-import com.zlebank.zplatform.member.exception.InvalidMemberDataException;
 
 /**
  * 

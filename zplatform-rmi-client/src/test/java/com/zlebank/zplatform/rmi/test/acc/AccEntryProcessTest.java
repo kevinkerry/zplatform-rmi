@@ -11,7 +11,6 @@
 package com.zlebank.zplatform.rmi.test.acc;
 
 import java.math.BigDecimal;
-import java.util.Date;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +35,7 @@ public class AccEntryProcessTest extends BaseTest{
     private IAccEntryService accEntryService;
     @Test
     public void accEntryProcessTest() throws Exception{
-        TradeInfo tradeInfo = new TradeInfo();
+        /*TradeInfo tradeInfo = new TradeInfo();
         String seqTxnNo = String.format("%1$ty%1$tm%1$td%1$tH%1$tM%1$tS",
                 new Date()) + 1;
         tradeInfo.setSplit(false);
@@ -58,6 +57,25 @@ public class AccEntryProcessTest extends BaseTest{
                     .accEntryProcess(tradeInfo, EntryEvent.TRADE_SUCCESS);
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        }*/
+    	
+    	TradeInfo entry = new TradeInfo();
+        entry.setPayMemberId("200000000001399");
+        entry.setPayordno("M2016082513487124");
+        entry.setCoopInstCode("300000000000004");
+        entry.setPayToMemberId("200000000001399");
+       entry.setChannelId("95000001");
+        entry.setTxnseqno("1608259900066723");
+        entry.setBusiCode(TradeType.RECHARGE.getCode());
+        entry.setAmount(new BigDecimal(1011));
+        entry.setCommission(new BigDecimal(0));
+        entry.setCharge(new BigDecimal(0));
+        System.out.println("start");
+        try {
+        	accEntryService.accEntryProcess(entry,EntryEvent.TRADE_SUCCESS);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
     }
 }

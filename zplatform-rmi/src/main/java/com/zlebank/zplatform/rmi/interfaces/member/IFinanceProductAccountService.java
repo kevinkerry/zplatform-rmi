@@ -13,6 +13,8 @@ package com.zlebank.zplatform.rmi.interfaces.member;
 import com.zlebank.zplatform.acc.bean.enums.Usage;
 import com.zlebank.zplatform.member.bean.FinanceProductAccountBean;
 import com.zlebank.zplatform.member.bean.FinanceProductQueryBean;
+import com.zlebank.zplatform.member.exception.DataCheckFailedException;
+import com.zlebank.zplatform.member.exception.GetAccountFailedException;
 
 /**
  * 会员账户相关服务

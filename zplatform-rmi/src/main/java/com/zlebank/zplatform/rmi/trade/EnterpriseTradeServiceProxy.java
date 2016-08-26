@@ -14,7 +14,11 @@ import com.zlebank.zplatform.hessian.core.Context;
 import com.zlebank.zplatform.hessian.core.Hessian;
 import com.zlebank.zplatform.member.bean.EnterpriseRealNameBean;
 import com.zlebank.zplatform.member.bean.EnterpriseRealNameConfirmBean;
+import com.zlebank.zplatform.member.exception.InvalidMemberDataException;
+import com.zlebank.zplatform.trade.bean.FinancierReimbursementBean;
+import com.zlebank.zplatform.trade.bean.MerchantReimbursementBean;
 import com.zlebank.zplatform.trade.bean.OffLineChargeBean;
+import com.zlebank.zplatform.trade.bean.RaiseMoneyTransferBean;
 
 /**
  * Class Description
@@ -46,4 +50,24 @@ public interface EnterpriseTradeServiceProxy {
 	 * @return
 	 */
 	public String offLineCharge(OffLineChargeBean offLineChargeBean);
+	/**
+	 * 创建融资人还款订单
+	 * @param bean
+	 * @return
+	 */
+	public String createFinancierOrder(FinancierReimbursementBean bean);
+	
+	/**
+	 * 创建募集款划转订单
+	 * @param raiseMoneyTransferBean
+	 * @return
+	 */
+	public String createRaiseMoneyTransferOrder(RaiseMoneyTransferBean raiseMoneyTransferBean);
+	
+	/**
+	 * 创建商户还款订单
+	 * @param merchanReimbursementBean
+	 * @return
+	 */
+	public String createMerchantReimbusementOrder(MerchantReimbursementBean merchanReimbursementBean) throws Exception;
 }

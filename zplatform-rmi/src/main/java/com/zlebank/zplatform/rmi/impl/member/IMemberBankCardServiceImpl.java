@@ -46,6 +46,7 @@ public class IMemberBankCardServiceImpl extends HessianServlet implements IMembe
     @Override
     public void saveRealNameInfo(RealNameBean bean) {
         memberBankCardService.saveRealNameInfo(bean);
+        
     }
 
     /**

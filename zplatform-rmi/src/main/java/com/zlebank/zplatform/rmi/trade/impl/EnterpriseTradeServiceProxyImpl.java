@@ -19,7 +19,10 @@ import com.zlebank.zplatform.member.bean.EnterpriseRealNameConfirmBean;
 import com.zlebank.zplatform.member.exception.DataCheckFailedException;
 import com.zlebank.zplatform.member.exception.InvalidMemberDataException;
 import com.zlebank.zplatform.rmi.trade.EnterpriseTradeServiceProxy;
+import com.zlebank.zplatform.trade.bean.FinancierReimbursementBean;
+import com.zlebank.zplatform.trade.bean.MerchantReimbursementBean;
 import com.zlebank.zplatform.trade.bean.OffLineChargeBean;
+import com.zlebank.zplatform.trade.bean.RaiseMoneyTransferBean;
 import com.zlebank.zplatform.trade.exception.TradeException;
 import com.zlebank.zplatform.trade.service.EnterpriseTradeService;
 
@@ -83,5 +86,41 @@ public class EnterpriseTradeServiceProxyImpl extends HessianServlet implements E
 	@Override
 	public String offLineCharge(OffLineChargeBean offLineChargeBean) {
 		return enterpriseTradeService.offLineCharge(offLineChargeBean);
+	}
+
+	/**
+	 *
+	 * @param bean
+	 * @return
+	 */
+	@Override
+	public String createFinancierOrder(FinancierReimbursementBean bean) {
+		// TODO Auto-generated method stub
+		return enterpriseTradeService.createFinancierOrder(bean);
+	}
+
+	/**
+	 *
+	 * @param raiseMoneyTransferBean
+	 * @return
+	 */
+	@Override
+	public String createRaiseMoneyTransferOrder(
+			RaiseMoneyTransferBean raiseMoneyTransferBean) {
+		// TODO Auto-generated method stub
+		return enterpriseTradeService.raiseMoneyTransfer(raiseMoneyTransferBean);
+	}
+
+	/**
+	 *
+	 * @param merchanReimbursementBean
+	 * @return
+	 * @throws Exception 
+	 */
+	@Override
+	public String createMerchantReimbusementOrder(
+			MerchantReimbursementBean merchanReimbursementBean) throws Exception {
+		// TODO Auto-generated method stub
+		return enterpriseTradeService.merchReimbusement(merchanReimbursementBean);
 	}
 }

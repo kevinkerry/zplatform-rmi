@@ -29,6 +29,10 @@ import com.zlebank.zplatform.trade.service.MerchWhiteListServiceExt;
 @Repository
 public class MerchWhiteListServiceProxyImpl extends HessianServlet implements MerchWhiteListServiceProxy{
 
+	/**
+	 * serialVersionUID
+	 */
+	private static final long serialVersionUID = 7037198407514875441L;
 	@Autowired
 	private MerchWhiteListServiceExt merchWhiteListService;
 	/**

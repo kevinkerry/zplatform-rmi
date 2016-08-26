@@ -16,7 +16,6 @@ import org.springframework.stereotype.Repository;
 
 import com.zlebank.zplatform.rmi.impl.member.ICoopInstiMKServiceImpl;
 import com.zlebank.zplatform.rmi.interfaces.member.ICoopInstiMKService;
-import com.zlebank.zplatform.rmi.interfaces.member.IMemberAccountService;
 
 /**
  * Class Description

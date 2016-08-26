@@ -32,6 +32,10 @@ import com.zlebank.zplatform.trade.service.IProdCaseService;
 @Repository
 public class ProdCaseServiceProxyImpl extends HessianServlet implements ProdCaseServiceProxy{
 
+	/**
+	 * serialVersionUID
+	 */
+	private static final long serialVersionUID = 803477386625543039L;
 	@Autowired
 	private IProdCaseService prodCaseService;
 	/**
