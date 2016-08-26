@@ -33,6 +33,7 @@ public class WapCardBean implements Serializable{
     private String phoneNo;
     private String cvn2;
     private String expired;
+    private String tn;
     /**
      * @return the cardNo
      */
@@ -158,6 +159,18 @@ public class WapCardBean implements Serializable{
 	public WapCardBean() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+	/**
+	 * @return the tn
+	 */
+	public String getTn() {
+		return tn;
+	}
+	/**
+	 * @param tn the tn to set
+	 */
+	public void setTn(String tn) {
+		this.tn = tn;
 	}
     
     
