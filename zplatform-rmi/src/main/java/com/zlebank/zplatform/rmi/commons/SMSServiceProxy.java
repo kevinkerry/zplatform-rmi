@@ -12,7 +12,6 @@ package com.zlebank.zplatform.rmi.commons;
 
 import com.zlebank.zplatform.hessian.core.Context;
 import com.zlebank.zplatform.hessian.core.Hessian;
-import com.zlebank.zplatform.sms.pojo.enums.ModuleTypeEnum;
 
 /**
  * Class Description
@@ -33,7 +32,7 @@ public interface SMSServiceProxy {
 	 * @param args 短信参数
 	 * @return
 	 */
-	public int sendSMS(ModuleTypeEnum moduleType,String phoneNo,String orderNo,String... args);
+	public int sendSMS(String moduleType,String phoneNo,String orderNo,String... args);
 	
 	/**
 	 * 校验短信验证码
@@ -51,7 +50,7 @@ public interface SMSServiceProxy {
 	 * @param code 验证码
 	 * @return
 	 */
-	public int verifyCode(ModuleTypeEnum moduleType,String phoneNo,String code);
+	public int verifyCodeByModuleType(String moduleType,String phoneNo,String code);
 	
 	/**
 	 * 生成短信验证码（不发送短信，短信由第三方发送）
@@ -60,5 +59,5 @@ public interface SMSServiceProxy {
 	 * @param orderNo
 	 * @return
 	 */
-	public String generateCode(ModuleTypeEnum moduleType,String phoneNo,String orderNo);
+	public String generateCode(String moduleType,String phoneNo,String orderNo);
 }

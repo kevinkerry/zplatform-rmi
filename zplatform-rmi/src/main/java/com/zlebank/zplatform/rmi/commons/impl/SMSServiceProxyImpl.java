@@ -46,10 +46,10 @@ public class SMSServiceProxyImpl extends HessianServlet implements SMSServicePro
 	 * @return
 	 */
 	@Override
-	public int sendSMS(ModuleTypeEnum moduleType, String phoneNo,
+	public int sendSMS(String moduleType, String phoneNo,
 			String orderNo, String... args) {
 		// TODO Auto-generated method stub
-		return smsService.sendSMS(moduleType, phoneNo, orderNo, args);
+		return smsService.sendSMS(ModuleTypeEnum.fromValue(moduleType), phoneNo, orderNo, args);
 	}
 
 	/**
@@ -73,9 +73,9 @@ public class SMSServiceProxyImpl extends HessianServlet implements SMSServicePro
 	 * @return
 	 */
 	@Override
-	public int verifyCode(ModuleTypeEnum moduleType, String phoneNo, String code) {
+	public int verifyCodeByModuleType(String moduleType, String phoneNo, String code) {
 		// TODO Auto-generated method stub
-		return smsService.verifyCode(moduleType, phoneNo, code);
+		return smsService.verifyCode(ModuleTypeEnum.fromValue(moduleType), phoneNo, code);
 	}
 
 	/**
@@ -86,10 +86,10 @@ public class SMSServiceProxyImpl extends HessianServlet implements SMSServicePro
 	 * @return
 	 */
 	@Override
-	public String generateCode(ModuleTypeEnum moduleType, String phoneNo,
+	public String generateCode(String moduleType, String phoneNo,
 			String orderNo) {
 		// TODO Auto-generated method stub
-		return smsService.generateCode(moduleType, phoneNo, orderNo);
+		return smsService.generateCode(ModuleTypeEnum.fromValue(moduleType), phoneNo, orderNo);
 	}
 
 }

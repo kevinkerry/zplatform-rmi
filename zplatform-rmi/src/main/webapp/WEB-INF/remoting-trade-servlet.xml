@@ -123,4 +123,13 @@
 		<!-- Hessian服务的接口 -->
 		<property name="serviceInterface" value="com.zlebank.zplatform.rmi.trade.AppUpdateServiceProxy" />
 	</bean>
+	
+	<bean id="sms" class="com.zlebank.zplatform.rmi.commons.impl.SMSServiceProxyImpl" />
+	<bean name="/smsServiceProxy"
+		class="org.springframework.remoting.caucho.HessianServiceExporter">
+		<!-- 需要导出的目标bean -->
+		<property name="service" ref="sms" />
+		<!-- Hessian服务的接口 -->
+		<property name="serviceInterface" value="com.zlebank.zplatform.rmi.commons.SMSServiceProxy" />
+	</bean>
 </beans>

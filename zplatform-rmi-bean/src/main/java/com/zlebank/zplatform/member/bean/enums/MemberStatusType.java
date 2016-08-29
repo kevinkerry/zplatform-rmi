@@ -27,6 +27,10 @@ public enum MemberStatusType {
     SYSTEM_LOCK("02"),
     /**停用**/
     Stop("99"),
+    /**不存在*/
+    NOEXIST("04"),
+    /**审核中*/
+    CHECKING("03"),
     /**未知状态**/
     UNKNOW("88");
 

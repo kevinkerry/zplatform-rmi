@@ -22,6 +22,7 @@ import com.zlebank.zplatform.hessian.core.Hessian;
 import com.zlebank.zplatform.member.bean.MemberQuery;
 import com.zlebank.zplatform.member.bean.enums.MemberType;
 import com.zlebank.zplatform.member.pojo.PojoMember;
+import com.zlebank.zplatform.member.pojo.PojoMemberApply;
 
 /**
  * Class Description
@@ -140,4 +141,10 @@ public interface IMemberService {
      */
     public PojoMember getMemberByPhoneAndCoopInsti(String phone, long instiCode);
 
+    /**
+     * 通过会员号取得审核表中的会员信息
+     * @param memberId
+     * @return
+     */
+    public PojoMemberApply getMemberApply(String memberId);
 }

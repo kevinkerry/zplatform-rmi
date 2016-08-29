@@ -26,6 +26,7 @@ import com.zlebank.zplatform.member.bean.MemberQuery;
 import com.zlebank.zplatform.member.bean.enums.MemberType;
 import com.zlebank.zplatform.member.exception.MemberBussinessException;
 import com.zlebank.zplatform.member.pojo.PojoMember;
+import com.zlebank.zplatform.member.pojo.PojoMemberApply;
 import com.zlebank.zplatform.member.service.MemberService;
 import com.zlebank.zplatform.rmi.interfaces.member.IMemberService;
 
@@ -188,4 +189,16 @@ public class IMemberServiceImpl extends HessianServlet implements IMemberService
         return memberService.getMemberByPhoneAndCoopInsti(phone, instiCode);
     }
 
+	/**
+	 *
+	 * @param memberId
+	 * @return
+	 */
+	@Override
+	public PojoMemberApply getMemberApply(String memberId) {
+		// TODO Auto-generated method stub
+		return memberService.getMemberApply(memberId);
+	}
+
+    
 }
