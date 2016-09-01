@@ -118,4 +118,16 @@ public class IMemberOperationServiceImpl extends HessianServlet implements IMemb
         return memberOperationService.resetPayPwd(memberType, member, newPayPwd, isCheckOldPassword);
     }
 
+	/**
+	 *
+	 * @param memberId
+	 * @param phone
+	 * @return
+	 */
+	@Override
+	public boolean modifyPhone(String memberId, String phone) {
+		// TODO Auto-generated method stub
+		return memberOperationService.modifyPhone(memberId, phone);
+	}
+
 }

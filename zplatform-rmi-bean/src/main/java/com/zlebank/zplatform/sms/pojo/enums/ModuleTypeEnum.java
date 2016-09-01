@@ -11,6 +11,7 @@
 package com.zlebank.zplatform.sms.pojo.enums;
 
 
+
 /**
  * Class Description
  *
@@ -40,7 +41,10 @@ public enum ModuleTypeEnum {
     RESETPAYPWD("1009"),
     /**秘钥上传**/
     SECRETKEY("1010"),
-    
+    /**企业实名认证*/
+    ENTERPRISEREALNAME("1011"),
+    /**解绑手机**/
+    UNBINDPHONE("1012"),
 
     /**绑定手机号*/
     BINDPHONE("1007"),

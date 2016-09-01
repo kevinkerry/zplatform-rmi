@@ -26,21 +26,22 @@ public class ReimbursementDetailBean implements Serializable {
 	 * serialVersionUID
 	 */
 	private static final long serialVersionUID = -942904129154285120L;
-	private String oderId; // 订单号
+	private String orderId; // 订单号
 	private String investors; // 投资人
 	private String txnAmt; // 本金
 	private String interest; // 利息
+	
 	/**
-	 * @return the oderId
+	 * @return the orderId
 	 */
-	public String getOderId() {
-		return oderId;
+	public String getOrderId() {
+		return orderId;
 	}
 	/**
-	 * @param oderId the oderId to set
+	 * @param orderId the orderId to set
 	 */
-	public void setOderId(String oderId) {
-		this.oderId = oderId;
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
 	}
 	/**
 	 * @return the investors

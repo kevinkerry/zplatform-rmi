@@ -29,12 +29,13 @@ public class RaiseMoneyTransferBean implements Serializable {
 
 	private String txnType;// 交易类型
 	private String txnSubType;// 交易子类
-	private String bizTypeprivate;// 产品类型
+	private String bizType;// 产品类型
 	private String channelType;// 渠道类型
-	private String OrderId;// 订单号
+	private String orderId;// 订单号
 	private String memberId;// 商户ID
 	private String financingId;// 融资人ID
 	private String productCode;// 产品代码
+	private String coopInsti;
 	/**
 	 * @return the txnType
 	 */
@@ -59,17 +60,18 @@ public class RaiseMoneyTransferBean implements Serializable {
 	public void setTxnSubType(String txnSubType) {
 		this.txnSubType = txnSubType;
 	}
+	
 	/**
-	 * @return the bizTypeprivate
+	 * @return the bizType
 	 */
-	public String getBizTypeprivate() {
-		return bizTypeprivate;
+	public String getBizType() {
+		return bizType;
 	}
 	/**
-	 * @param bizTypeprivate the bizTypeprivate to set
+	 * @param bizType the bizType to set
 	 */
-	public void setBizTypeprivate(String bizTypeprivate) {
-		this.bizTypeprivate = bizTypeprivate;
+	public void setBizType(String bizType) {
+		this.bizType = bizType;
 	}
 	/**
 	 * @return the channelType
@@ -83,17 +85,18 @@ public class RaiseMoneyTransferBean implements Serializable {
 	public void setChannelType(String channelType) {
 		this.channelType = channelType;
 	}
+	
 	/**
 	 * @return the orderId
 	 */
 	public String getOrderId() {
-		return OrderId;
+		return orderId;
 	}
 	/**
 	 * @param orderId the orderId to set
 	 */
 	public void setOrderId(String orderId) {
-		OrderId = orderId;
+		this.orderId = orderId;
 	}
 	/**
 	 * @return the memberId
@@ -130,6 +133,18 @@ public class RaiseMoneyTransferBean implements Serializable {
 	 */
 	public void setProductCode(String productCode) {
 		this.productCode = productCode;
+	}
+	/**
+	 * @return the coopInsti
+	 */
+	public String getCoopInsti() {
+		return coopInsti;
+	}
+	/**
+	 * @param coopInsti the coopInsti to set
+	 */
+	public void setCoopInsti(String coopInsti) {
+		this.coopInsti = coopInsti;
 	}
 	
 	

@@ -96,7 +96,13 @@ public class EnterpriseTradeServiceProxyImpl extends HessianServlet implements E
 	@Override
 	public String createFinancierOrder(FinancierReimbursementBean bean) {
 		// TODO Auto-generated method stub
-		return enterpriseTradeService.createFinancierOrder(bean);
+		try {
+			return enterpriseTradeService.createFinancierOrder(bean);
+		} catch (TradeException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "";
 	}
 
 	/**

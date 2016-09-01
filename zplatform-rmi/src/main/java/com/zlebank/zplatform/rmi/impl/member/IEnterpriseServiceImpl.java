@@ -55,8 +55,8 @@ public class IEnterpriseServiceImpl extends HessianServlet implements IEnterpris
 	 * @throws Exception
 	 */
 	@Override
-	public void registerApply(EnterpriseBean enterpriseDeta) throws Exception {
-		enterpriseService.registerApply(enterpriseDeta);
+	public String registerApply(EnterpriseBean enterpriseDeta) throws Exception {
+		return enterpriseService.registerApply(enterpriseDeta);
 	}
 
 	/**

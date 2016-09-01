@@ -69,6 +69,7 @@ public class OrderBean implements Serializable{
     private String customerIp="";
     private String cardTransData="";
     private String orderDesc="";
+    private String productcode="";
     /**
      * @return the version
      */
@@ -524,6 +525,20 @@ public class OrderBean implements Serializable{
 	 */
 	public void setMerAbbr(String merAbbr) {
 		this.merAbbr = merAbbr;
+	}
+	
+	
+	/**
+	 * @return the productcode
+	 */
+	public String getProductcode() {
+		return productcode;
+	}
+	/**
+	 * @param productcode the productcode to set
+	 */
+	public void setProductcode(String productcode) {
+		this.productcode = productcode;
 	}
 	/**
 	 * @param version

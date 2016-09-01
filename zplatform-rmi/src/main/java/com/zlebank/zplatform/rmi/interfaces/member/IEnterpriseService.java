@@ -38,7 +38,7 @@ public interface IEnterpriseService {
     * 企业注册申请
     * @param enterpriseDeta
     */
-   public void registerApply(EnterpriseBean enterpriseDeta) throws Exception;
+   public String registerApply(EnterpriseBean enterpriseDeta) throws Exception;
    
    /**
     * 企业实名认证申请

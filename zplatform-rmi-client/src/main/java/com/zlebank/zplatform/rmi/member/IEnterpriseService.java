@@ -41,7 +41,7 @@ public interface IEnterpriseService {
 	 * 
 	 * @param enterpriseDeta
 	 */
-	public void registerApply(EnterpriseBean enterpriseDeta) throws Exception;
+	public String registerApply(EnterpriseBean enterpriseDeta) throws Exception;
 
 	
 	/**

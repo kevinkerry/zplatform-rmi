@@ -11,14 +11,18 @@
 package com.zlebank.zplatform.rmi.trade;
 
 import java.util.Date;
+import java.util.List;
 
 import org.apache.commons.lang.time.DateUtils;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.alibaba.fastjson.JSON;
 import com.zlebank.zplatform.member.bean.EnterpriseRealNameBean;
 import com.zlebank.zplatform.member.bean.EnterpriseRealNameConfirmBean;
+import com.zlebank.zplatform.rmi.commons.BankInfoServiceProxy;
+import com.zlebank.zplatform.rmi.commons.bean.BankInfoBean;
 import com.zlebank.zplatform.rmi.test.BaseTest;
 import com.zlebank.zplatform.trade.bean.OffLineChargeBean;
 
@@ -34,7 +38,8 @@ public class EnterpriseTradeServiceTest extends BaseTest{
 
 	@Autowired
 	private EnterpriseTradeServiceProxy enterpriseTradeServiceProxy;
-	
+	@Autowired
+	private BankInfoServiceProxy bankInfoServiceProxy;
 	
 	@Test
 	@Ignore
@@ -89,6 +94,7 @@ public class EnterpriseTradeServiceTest extends BaseTest{
 	}
 	
 	@Test
+	@Ignore
 	public void test_offlinecharge(){
 		OffLineChargeBean offLineChargeBean = new OffLineChargeBean();
 		offLineChargeBean.setMemberId("200000000000683");
@@ -104,5 +110,9 @@ public class EnterpriseTradeServiceTest extends BaseTest{
 		String tn = enterpriseTradeServiceProxy.offLineCharge(offLineChargeBean);
 		System.out.println(tn);
 	}
-	
+	@Test
+	public void test_bankInfo(){
+		List<BankInfoBean> queryBankInfo = bankInfoServiceProxy.queryBankInfo("北京");
+		System.out.println(JSON.toJSONString(queryBankInfo));
+	}
 }
