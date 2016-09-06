@@ -10,6 +10,7 @@
  */
 package com.zlebank.zplatform.commons.bean;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -20,7 +21,7 @@ import java.util.Date;
  * @date 2015年12月8日 下午2:55:50
  * @since 
  */
-public class TransferDataQuery implements Bean{
+public class TransferDataQuery implements Bean,Serializable{
     /**业务类型**/
     private String busicode;
     /**批次号**/

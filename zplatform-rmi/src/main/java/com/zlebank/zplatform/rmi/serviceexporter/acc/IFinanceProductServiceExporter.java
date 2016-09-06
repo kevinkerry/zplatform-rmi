@@ -26,7 +26,7 @@ import com.zlebank.zplatform.rmi.interfaces.acc.IFinanceProductService;
  * @since 
  */
 @Repository("/rmiFinanceProductService")
-public class IFinanceProductServiceExporter extends HessianServiceExporter {
+public class IFinanceProductServiceExporter extends HessianServiceExporter{
     @Autowired
     private IFinanceProductServiceImpl iFinanceProductServiceImpl;
     @Autowired

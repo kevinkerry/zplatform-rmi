@@ -10,6 +10,8 @@
  */
 package com.zlebank.zplatform.commons.bean;
 
+import java.io.Serializable;
+
 /**
  * Class Description
  *
@@ -18,7 +20,7 @@ package com.zlebank.zplatform.commons.bean;
  * @date 2015年9月17日 下午8:54:43
  * @since 
  */
-public class CountyBean {
+public class CountyBean implements Serializable{
     
     private Long countyId;
     

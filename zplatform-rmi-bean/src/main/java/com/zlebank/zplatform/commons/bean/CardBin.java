@@ -10,6 +10,8 @@
  */
 package com.zlebank.zplatform.commons.bean;
 
+import java.io.Serializable;
+
 /**
  * Class Description
  *
@@ -18,7 +20,7 @@ package com.zlebank.zplatform.commons.bean;
  * @date 2015年10月10日 下午7:18:21
  * @since 
  */
-public class CardBin {
+public class CardBin implements Serializable{
     /**卡bin**/
     private String cardBin;
     /**卡长度**/

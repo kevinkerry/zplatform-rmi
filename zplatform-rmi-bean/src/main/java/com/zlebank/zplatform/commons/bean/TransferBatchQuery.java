@@ -10,6 +10,8 @@
  */
 package com.zlebank.zplatform.commons.bean;
 
+import java.io.Serializable;
+
 import com.zlebank.zplatform.commons.bean.Bean;
 
 /**
@@ -20,7 +22,7 @@ import com.zlebank.zplatform.commons.bean.Bean;
  * @date 2015年12月10日 上午11:08:04
  * @since 
  */
-public class TransferBatchQuery implements Bean {
+public class TransferBatchQuery implements Bean,Serializable {
     /**批次号**/
     private String batchno;
     /**状态**/

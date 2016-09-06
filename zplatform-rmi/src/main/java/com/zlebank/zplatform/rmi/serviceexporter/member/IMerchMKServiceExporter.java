@@ -26,7 +26,7 @@ import com.zlebank.zplatform.rmi.interfaces.member.IMerchMKService;
  * @since 
  */
 @Repository("/rmiMerchMKService")
-public class IMerchMKServiceExporter extends HessianServiceExporter {
+public class IMerchMKServiceExporter extends HessianServiceExporter{
         @Autowired
         private IMerchMKServiceImpl iMerchMKServiceImpl;
         @Autowired

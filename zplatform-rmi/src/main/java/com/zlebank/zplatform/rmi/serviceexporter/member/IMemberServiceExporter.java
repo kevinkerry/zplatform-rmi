@@ -26,7 +26,7 @@ import com.zlebank.zplatform.rmi.interfaces.member.IMemberService;
  * @since 
  */
 @Repository("/rmiMemberService")
-public class IMemberServiceExporter extends HessianServiceExporter {
+public class IMemberServiceExporter extends HessianServiceExporter{
         @Autowired
         private IMemberServiceImpl iMemberServiceImpl;
         @Autowired

@@ -26,7 +26,7 @@ import com.zlebank.zplatform.rmi.interfaces.acc.IAccEntryService;
  * @since 
  */
 @Repository("/rmiAccEntryService")
-public class IAccEntryServiceExporter extends HessianServiceExporter {
+public class IAccEntryServiceExporter extends HessianServiceExporter{
     @Autowired
     private IAccEntryServiceImpl iAccEntryServiceImpl;
     @Autowired

@@ -26,7 +26,7 @@ import com.zlebank.zplatform.rmi.interfaces.member.IPrimayKeyService;
  * @since 
  */
 @Repository("/rmiPrimayKeyService")
-public class IPrimayKeyServiceExporter extends HessianServiceExporter {
+public class IPrimayKeyServiceExporter extends HessianServiceExporter{
         @Autowired
         private IPrimayKeyServiceImpl iPrimayKeyServiceImpl;
         @Autowired

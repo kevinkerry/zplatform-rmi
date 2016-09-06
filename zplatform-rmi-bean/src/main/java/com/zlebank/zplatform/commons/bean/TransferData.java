@@ -10,6 +10,8 @@
  */
 package com.zlebank.zplatform.commons.bean;
 
+import java.io.Serializable;
+
 
 /**
  * 划拨bean
@@ -19,7 +21,7 @@ package com.zlebank.zplatform.commons.bean;
  * @date 2015年12月8日 下午4:12:44
  * @since 
  */
-public class TransferData implements Bean{
+public class TransferData implements Bean,Serializable{
     private long tid;
     private String batchno;
     private String tranid;

@@ -26,7 +26,7 @@ import com.zlebank.zplatform.rmi.interfaces.member.ICoopInstiProductService;
  * @since 
  */
 @Repository("/rmiCoopInstiProductService")
-public class ICoopInstiProductServiceExporter extends HessianServiceExporter {
+public class ICoopInstiProductServiceExporter extends HessianServiceExporter{
         @Autowired
         private ICoopInstiProductServiceImpl iCoopInstiProductServiceImpl;
         @Autowired
