@@ -10,11 +10,15 @@
  */
 package com.zlebank.zplatform.rmi.test.member;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.alibaba.fastjson.JSON;
+import com.zlebank.zplatform.member.bean.CoopInsti;
 import com.zlebank.zplatform.member.bean.EnterpriseBean;
 import com.zlebank.zplatform.member.bean.enums.IndustryType;
+import com.zlebank.zplatform.rmi.member.ICoopInstiService;
 import com.zlebank.zplatform.rmi.member.IEnterpriseService;
 import com.zlebank.zplatform.rmi.test.BaseTest;
 
@@ -31,8 +35,18 @@ public class EnterpriseServiceTest extends BaseTest{
 
 	@Autowired
 	private IEnterpriseService enterpriseService;
+	@Autowired
+	private ICoopInstiService coopInstiService;
 	
 	@Test
+	public void test_query_coopinst(){
+		CoopInsti instiByInstiCode = coopInstiService.getInstiByInstiCode("300000000000006");
+		System.out.println(JSON.toJSONString(instiByInstiCode));
+	}
+	
+	
+	@Test
+	@Ignore
 	public void test_register(){
 		EnterpriseBean enterpriseDeta = new EnterpriseBean();
 		enterpriseDeta.setCoopInstiCode("300000000000027");
