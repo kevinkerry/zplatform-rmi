@@ -49,5 +49,8 @@ public class ICoopInstiProductServiceImpl extends HessianServlet implements ICoo
             throws AbstractCoopInstiException {
         return coopInstiProductService.getProducts(coopInstiId);
     }
-
+    
+    public String getDefaultVerInfo(String instiCode, String busicode,int verType){
+    	return coopInstiProductService.getDefaultVerInfo(instiCode, busicode, verType);
+    }
 }

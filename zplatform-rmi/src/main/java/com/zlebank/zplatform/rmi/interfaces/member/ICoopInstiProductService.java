@@ -19,4 +19,6 @@ public interface ICoopInstiProductService {
 	 */
 	public List<ProductModel> getProducts(long coopInstiId)
 			throws AbstractCoopInstiException;
+	
+	public String getDefaultVerInfo(String instiCode, String busicode,int verType);
 }

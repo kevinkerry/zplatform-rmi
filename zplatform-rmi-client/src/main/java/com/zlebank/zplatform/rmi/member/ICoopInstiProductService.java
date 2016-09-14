@@ -20,4 +20,12 @@ public interface ICoopInstiProductService {
 	 */
 	public List<ProductModel> getProducts(long coopInstiId)
 			throws Exception;
+
+	/**
+	 * @param coopInstiId
+	 * @param busicode
+	 * @param i
+	 * @return
+	 */
+	public String getDefaultVerInfo(String coopInstiId, String busicode, int i);
 }
